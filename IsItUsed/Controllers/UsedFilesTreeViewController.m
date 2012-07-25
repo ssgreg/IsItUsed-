@@ -7,6 +7,8 @@
 //
 
 #import "UsedFilesTreeViewController.h"
+#import "../Data/UsedFile.h"
+
 
 @implementation UsedFilesTreeViewController
 
@@ -15,13 +17,27 @@
   self = [super init];
   if (self)
   {
-    dataArrary = [[NSMutableArray alloc] init];
+    dataArray = [[NSMutableArray alloc] init];
   }
   return self;
 }
 
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+  return [dataArray count];
+}
+
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+  UsedFile* usedFile = [dataArray objectAtIndex:row];
+  NSString* columnID = [tableColumn identifier];
+  return [usedFile valueForKey:columnID];
+}
+
 - (IBAction)SetFilter:(id)sender
 {
+  [dataArray addObject:[[UsedFile alloc] init]];
+  [TheTableView reloadData];
 }
 
 @end

@@ -9,6 +9,10 @@
 #import <Cocoa/Cocoa.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+{
+  @private
+    IBOutlet NSSearchField* searchField;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 

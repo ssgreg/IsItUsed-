@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UsedFilesTreeViewController : NSObject
+@interface UsedFilesTreeViewController : NSObject<NSTableViewDataSource>
 {
   @private
     IBOutlet NSTableView* TheTableView;
-    NSMutableArray* dataArrary;
+    NSMutableArray* dataArray;
 }
 
 - (IBAction)SetFilter:(id)sender;
