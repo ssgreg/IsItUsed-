@@ -21,6 +21,8 @@
 		EE18BC8D15C02830003EC499 /* UsedFile.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC8C15C02830003EC499 /* UsedFile.m */; };
 		EE18BC9715C10719003EC499 /* UsedFileFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC9615C10719003EC499 /* UsedFileFilter.m */; };
 		EE18BC9A15C14470003EC499 /* IsItUsedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC9915C14470003EC499 /* IsItUsedModel.m */; };
+		EE18BC9D15C1474B003EC499 /* FilteredListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC9C15C1474B003EC499 /* FilteredListModel.m */; };
+		EE18BCA015C148FC003EC499 /* SearchFieldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC9F15C148FC003EC499 /* SearchFieldModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,10 @@
 		EE18BC9615C10719003EC499 /* UsedFileFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsedFileFilter.m; path = Data/UsedFileFilter.m; sourceTree = "<group>"; };
 		EE18BC9815C14470003EC499 /* IsItUsedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IsItUsedModel.h; path = Data/IsItUsedModel.h; sourceTree = "<group>"; };
 		EE18BC9915C14470003EC499 /* IsItUsedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IsItUsedModel.m; path = Data/IsItUsedModel.m; sourceTree = "<group>"; };
+		EE18BC9B15C1474B003EC499 /* FilteredListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilteredListModel.h; path = Data/FilteredListModel.h; sourceTree = "<group>"; };
+		EE18BC9C15C1474B003EC499 /* FilteredListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilteredListModel.m; path = Data/FilteredListModel.m; sourceTree = "<group>"; };
+		EE18BC9E15C148FB003EC499 /* SearchFieldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchFieldModel.h; path = Data/SearchFieldModel.h; sourceTree = "<group>"; };
+		EE18BC9F15C148FC003EC499 /* SearchFieldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchFieldModel.m; path = Data/SearchFieldModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,10 @@
 				EE18BC9615C10719003EC499 /* UsedFileFilter.m */,
 				EE18BC9815C14470003EC499 /* IsItUsedModel.h */,
 				EE18BC9915C14470003EC499 /* IsItUsedModel.m */,
+				EE18BC9B15C1474B003EC499 /* FilteredListModel.h */,
+				EE18BC9C15C1474B003EC499 /* FilteredListModel.m */,
+				EE18BC9E15C148FB003EC499 /* SearchFieldModel.h */,
+				EE18BC9F15C148FC003EC499 /* SearchFieldModel.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -319,6 +329,8 @@
 				EE18BC8D15C02830003EC499 /* UsedFile.m in Sources */,
 				EE18BC9715C10719003EC499 /* UsedFileFilter.m in Sources */,
 				EE18BC9A15C14470003EC499 /* IsItUsedModel.m in Sources */,
+				EE18BC9D15C1474B003EC499 /* FilteredListModel.m in Sources */,
+				EE18BCA015C148FC003EC499 /* SearchFieldModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

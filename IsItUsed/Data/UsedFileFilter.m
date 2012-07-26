@@ -13,6 +13,7 @@
 //
 // UsedFileFilter
 //
+
 @implementation UsedFileFilter
 
 @synthesize filteredFiles;

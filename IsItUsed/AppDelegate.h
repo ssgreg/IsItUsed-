@@ -6,12 +6,20 @@
 //  Copyright (c) 2012 Grigory Zubankov. All rights reserved.
 //
 
+// IsItUsed
+#import "Data/IsItUsedModel.h"
+// Cocoa
 #import <Cocoa/Cocoa.h>
 
+
+//
+// AppDelegate
+//
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 {
   @private
     IBOutlet NSSearchField* searchField;
+    IsItUsedModel* appModel;
 }
 
 @property (assign) IBOutlet NSWindow *window;
