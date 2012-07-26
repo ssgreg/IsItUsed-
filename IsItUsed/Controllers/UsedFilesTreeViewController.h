@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../Data/UsedFileFilter.h"
+#import "../Data/FilteredListModel.h"
 
 
 //
@@ -17,9 +17,10 @@
 {
   @private
     IBOutlet NSTableView* TheTableView;
-    UsedFileFilter* usedFileArray;
+    FilteredListModel* model;
 }
 
 - (IBAction)SetFilter:(id)sender;
+- (void)setModel:(FilteredListModel*) model;
 
 @end

@@ -17,34 +17,31 @@
   self = [super init];
   if (self)
   {
-    NSMutableArray* dataArray = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < 1000; ++i)
-    {
-      [dataArray addObject:[[UsedFile alloc] init]];
-    }
-    
-    usedFileArray = [[UsedFileFilter alloc] init: dataArray];
   }
   return self;
 }
 
+- (void)setModel:(FilteredListModel*) newModel
+{
+  model = newModel;
+  [TheTableView reloadData];
+}
+
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-  return [[usedFileArray filteredFiles] count];
+  return [model count];
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-  UsedFile* usedFile = [[usedFileArray filteredFiles] objectAtIndex:row];
-  NSString* columnID = [tableColumn identifier];
-  return [usedFile valueForKey:columnID];
+  UsedFile* usedFile = [model objectAtIndex:row];
+  return [usedFile valueForKey:[tableColumn identifier]];
 }
 
 - (IBAction)SetFilter:(id)sender
 {
-  NSString* searchString = [sender stringValue];
-  [usedFileArray setFilter:searchString];
+//  NSString* searchString = [sender stringValue];
+//  [usedFileArray setFilter:searchString];
   [TheTableView reloadData];
 }
 

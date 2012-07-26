@@ -28,6 +28,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+  [usedFilesTreeViewController setModel:[appModel filteredListModel]];
+  // TODO: View responsibility | Need to move
   [searchField becomeFirstResponder];
 }
 

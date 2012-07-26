@@ -1002,7 +1002,7 @@
 												<string key="NSReuseIdentifierKey">_NS:19</string>
 											</object>
 											<array class="NSMutableArray" key="NSTableColumns">
-												<object class="NSTableColumn" id="277657127">
+												<object class="NSTableColumn" id="470483204">
 													<string key="NSIdentifier">application</string>
 													<double key="NSWidth">100</double>
 													<double key="NSMinWidth">10</double>
@@ -1016,7 +1016,7 @@
 															<double key="NSSize">11</double>
 															<int key="NSfFlags">3100</int>
 														</object>
-														<object class="NSColor" key="NSBackgroundColor" id="111430252">
+														<object class="NSColor" key="NSBackgroundColor" id="379644645">
 															<int key="NSColorSpace">6</int>
 															<string key="NSCatalogName">System</string>
 															<string key="NSColorName">headerColor</string>
@@ -1029,7 +1029,7 @@
 															<reference key="NSColor" ref="908989557"/>
 														</object>
 													</object>
-													<object class="NSTextFieldCell" key="NSDataCell" id="16119412">
+													<object class="NSTextFieldCell" key="NSDataCell" id="1050303763">
 														<int key="NSCellFlags">337641536</int>
 														<int key="NSCellFlags2">2048</int>
 														<string key="NSContents">Text Cell</string>
@@ -1048,7 +1048,7 @@
 													<bool key="NSIsEditable">YES</bool>
 													<reference key="NSTableView" ref="50152069"/>
 												</object>
-												<object class="NSTableColumn" id="119937126">
+												<object class="NSTableColumn" id="1013543254">
 													<string key="NSIdentifier">usedFile</string>
 													<double key="NSWidth">129</double>
 													<double key="NSMinWidth">10</double>
@@ -1058,10 +1058,10 @@
 														<int key="NSCellFlags2">2048</int>
 														<string key="NSContents">Used File</string>
 														<reference key="NSSupport" ref="26"/>
-														<reference key="NSBackgroundColor" ref="111430252"/>
+														<reference key="NSBackgroundColor" ref="379644645"/>
 														<reference key="NSTextColor" ref="921381230"/>
 													</object>
-													<object class="NSTextFieldCell" key="NSDataCell" id="240368354">
+													<object class="NSTextFieldCell" key="NSDataCell" id="700696299">
 														<int key="NSCellFlags">337641536</int>
 														<int key="NSCellFlags2">2048</int>
 														<string key="NSContents">Text Cell</string>
@@ -1185,7 +1185,7 @@
 			<object class="NSCustomObject" id="755631768">
 				<string key="NSClassName">NSFontManager</string>
 			</object>
-			<object class="NSCustomObject" id="319496466">
+			<object class="NSCustomObject" id="886488360">
 				<string key="NSClassName">UsedFilesTreeViewController</string>
 			</object>
 			<object class="NSMenuItem" id="302598603">
@@ -2513,16 +2513,24 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">usedFilesTreeViewController</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="886488360"/>
+					</object>
+					<int key="connectionID">669</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">dataSource</string>
 						<reference key="source" ref="50152069"/>
-						<reference key="destination" ref="319496466"/>
+						<reference key="destination" ref="886488360"/>
 					</object>
 					<int key="connectionID">662</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">TheTableView</string>
-						<reference key="source" ref="319496466"/>
+						<reference key="source" ref="886488360"/>
 						<reference key="destination" ref="50152069"/>
 					</object>
 					<int key="connectionID">660</int>
@@ -2530,7 +2538,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">SetFilter:</string>
-						<reference key="source" ref="319496466"/>
+						<reference key="source" ref="886488360"/>
 						<reference key="destination" ref="1000242706"/>
 					</object>
 					<int key="connectionID">661</int>
@@ -3375,8 +3383,8 @@
 						<int key="objectID">621</int>
 						<reference key="object" ref="50152069"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="119937126"/>
-							<reference ref="277657127"/>
+							<reference ref="1013543254"/>
+							<reference ref="470483204"/>
 						</array>
 						<reference key="parent" ref="786466188"/>
 					</object>
@@ -3397,33 +3405,33 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">653</int>
-						<reference key="object" ref="119937126"/>
+						<reference key="object" ref="1013543254"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="240368354"/>
+							<reference ref="700696299"/>
 						</array>
 						<reference key="parent" ref="50152069"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">654</int>
-						<reference key="object" ref="240368354"/>
-						<reference key="parent" ref="119937126"/>
+						<reference key="object" ref="700696299"/>
+						<reference key="parent" ref="1013543254"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">655</int>
-						<reference key="object" ref="277657127"/>
+						<reference key="object" ref="470483204"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="16119412"/>
+							<reference ref="1050303763"/>
 						</array>
 						<reference key="parent" ref="50152069"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">656</int>
-						<reference key="object" ref="16119412"/>
-						<reference key="parent" ref="277657127"/>
+						<reference key="object" ref="1050303763"/>
+						<reference key="parent" ref="470483204"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">659</int>
-						<reference key="object" ref="319496466"/>
+						<reference key="object" ref="886488360"/>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -3964,7 +3972,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">668</int>
+			<int key="maxID">669</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3973,12 +3981,17 @@
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="searchField">NSSearchField</string>
+						<string key="usedFilesTreeViewController">UsedFilesTreeViewController</string>
 						<string key="window">NSWindow</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="searchField">
 							<string key="name">searchField</string>
 							<string key="candidateClassName">NSSearchField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="usedFilesTreeViewController">
+							<string key="name">usedFilesTreeViewController</string>
+							<string key="candidateClassName">UsedFilesTreeViewController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="window">
 							<string key="name">window</string>
