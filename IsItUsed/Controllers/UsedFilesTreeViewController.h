@@ -7,12 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "../Data/UsedFileFilter.h"
 
+
+//
+// UsedFilesTreeViewController
+//
 @interface UsedFilesTreeViewController : NSObject<NSTableViewDataSource>
 {
   @private
     IBOutlet NSTableView* TheTableView;
-    NSMutableArray* dataArray;
+    UsedFileFilter* usedFileArray;
 }
 
 - (IBAction)SetFilter:(id)sender;
