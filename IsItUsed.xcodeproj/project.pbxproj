@@ -23,6 +23,10 @@
 		EE18BC9A15C14470003EC499 /* IsItUsedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC9915C14470003EC499 /* IsItUsedModel.m */; };
 		EE18BC9D15C1474B003EC499 /* FilteredListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC9C15C1474B003EC499 /* FilteredListModel.m */; };
 		EE18BCA015C148FC003EC499 /* SearchFieldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC9F15C148FC003EC499 /* SearchFieldModel.m */; };
+		EE18BCA315C159FA003EC499 /* SearchFieldContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BCA215C159FA003EC499 /* SearchFieldContoller.m */; };
+		EE18BCA815C24456003EC499 /* UsedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BCA715C24456003EC499 /* UsedObject.m */; };
+		EE18BCAB15C24A6E003EC499 /* ProcessWithUsedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BCAA15C24A6E003EC499 /* ProcessWithUsedObjects.m */; };
+		EE18BCB115C25B34003EC499 /* GetProcessWithUsedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BCB015C25B34003EC499 /* GetProcessWithUsedObjects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,14 @@
 		EE18BC9C15C1474B003EC499 /* FilteredListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilteredListModel.m; path = Data/FilteredListModel.m; sourceTree = "<group>"; };
 		EE18BC9E15C148FB003EC499 /* SearchFieldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchFieldModel.h; path = Data/SearchFieldModel.h; sourceTree = "<group>"; };
 		EE18BC9F15C148FC003EC499 /* SearchFieldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchFieldModel.m; path = Data/SearchFieldModel.m; sourceTree = "<group>"; };
+		EE18BCA115C159FA003EC499 /* SearchFieldContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchFieldContoller.h; path = Controllers/SearchFieldContoller.h; sourceTree = "<group>"; };
+		EE18BCA215C159FA003EC499 /* SearchFieldContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchFieldContoller.m; path = Controllers/SearchFieldContoller.m; sourceTree = "<group>"; };
+		EE18BCA615C24456003EC499 /* UsedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsedObject.h; path = Core/UsedObject.h; sourceTree = "<group>"; };
+		EE18BCA715C24456003EC499 /* UsedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsedObject.m; path = Core/UsedObject.m; sourceTree = "<group>"; };
+		EE18BCA915C24A6E003EC499 /* ProcessWithUsedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProcessWithUsedObjects.h; path = Core/ProcessWithUsedObjects.h; sourceTree = "<group>"; };
+		EE18BCAA15C24A6E003EC499 /* ProcessWithUsedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProcessWithUsedObjects.m; path = Core/ProcessWithUsedObjects.m; sourceTree = "<group>"; };
+		EE18BCAF15C25B34003EC499 /* GetProcessWithUsedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; name = GetProcessWithUsedObjects.h; path = Core/GetProcessWithUsedObjects.h; sourceTree = "<group>"; };
+		EE18BCB015C25B34003EC499 /* GetProcessWithUsedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetProcessWithUsedObjects.m; path = Core/GetProcessWithUsedObjects.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +144,8 @@
 		EE18BC4E15BFF3A5003EC499 /* IsItUsed */ = {
 			isa = PBXGroup;
 			children = (
+				EE18BCA515C2420C003EC499 /* Core */,
+				EE18BCA415C24172003EC499 /* DomenModel */,
 				EE18BC8E15C02F64003EC499 /* Views */,
 				EE18BC8A15C02815003EC499 /* Data */,
 				EE18BC8515C0219E003EC499 /* Controllers */,
@@ -187,6 +201,8 @@
 			children = (
 				EE18BC8715C021F2003EC499 /* UsedFilesTreeViewController.h */,
 				EE18BC8815C021F2003EC499 /* UsedFilesTreeViewController.m */,
+				EE18BCA115C159FA003EC499 /* SearchFieldContoller.h */,
+				EE18BCA215C159FA003EC499 /* SearchFieldContoller.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +229,26 @@
 			children = (
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		EE18BCA415C24172003EC499 /* DomenModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DomenModel;
+			sourceTree = "<group>";
+		};
+		EE18BCA515C2420C003EC499 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				EE18BCA615C24456003EC499 /* UsedObject.h */,
+				EE18BCA715C24456003EC499 /* UsedObject.m */,
+				EE18BCA915C24A6E003EC499 /* ProcessWithUsedObjects.h */,
+				EE18BCAA15C24A6E003EC499 /* ProcessWithUsedObjects.m */,
+				EE18BCAF15C25B34003EC499 /* GetProcessWithUsedObjects.h */,
+				EE18BCB015C25B34003EC499 /* GetProcessWithUsedObjects.m */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +367,10 @@
 				EE18BC9A15C14470003EC499 /* IsItUsedModel.m in Sources */,
 				EE18BC9D15C1474B003EC499 /* FilteredListModel.m in Sources */,
 				EE18BCA015C148FC003EC499 /* SearchFieldModel.m in Sources */,
+				EE18BCA315C159FA003EC499 /* SearchFieldContoller.m in Sources */,
+				EE18BCA815C24456003EC499 /* UsedObject.m in Sources */,
+				EE18BCAB15C24A6E003EC499 /* ProcessWithUsedObjects.m in Sources */,
+				EE18BCB115C25B34003EC499 /* GetProcessWithUsedObjects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

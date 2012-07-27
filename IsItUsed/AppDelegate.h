@@ -9,6 +9,7 @@
 // IsItUsed
 #import "Data/IsItUsedModel.h"
 #import "Controllers/UsedFilesTreeViewController.h"
+#import "Controllers/SearchFieldContoller.h"
 // Cocoa
 #import <Cocoa/Cocoa.h>
 
@@ -21,6 +22,7 @@
   @private
     IBOutlet NSSearchField* searchField;
     IBOutlet UsedFilesTreeViewController* usedFilesTreeViewController;
+    IBOutlet SearchFieldContoller* searchFieldController;
     IsItUsedModel* appModel;
 }
 

@@ -38,11 +38,4 @@
   return [usedFile valueForKey:[tableColumn identifier]];
 }
 
-- (IBAction)SetFilter:(id)sender
-{
-//  NSString* searchString = [sender stringValue];
-//  [usedFileArray setFilter:searchString];
-  [TheTableView reloadData];
-}
-
 @end

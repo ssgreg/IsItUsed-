@@ -8,6 +8,7 @@
 
 #import "UsedFileFilter.h"
 #import "../Data/UsedFile.h"
+#import "../Core/GetProcessWithUsedObjects.h"
 
 
 //
@@ -26,6 +27,8 @@
     allFiles = usedFiles;
     filteredFiles = allFiles;
   }
+  
+  NSMutableArray* temp = GetProcessWithUsedObjects();
   return self;
 }
 

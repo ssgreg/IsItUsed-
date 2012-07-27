@@ -6,8 +6,10 @@
 //  Copyright (c) 2012 Grigory Zubankov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+// IsItUsed
 #import "../Data/FilteredListModel.h"
+// Foundation
+#import <Foundation/Foundation.h>
 
 
 //
@@ -20,7 +22,6 @@
     FilteredListModel* model;
 }
 
-- (IBAction)SetFilter:(id)sender;
 - (void)setModel:(FilteredListModel*) model;
 
 @end

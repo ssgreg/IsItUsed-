@@ -15,4 +15,6 @@
 //
 @interface SearchFieldModel : NSObject
 
+- (void)setSearchText:(NSString*) searchText;
+
 @end
