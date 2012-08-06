@@ -17,6 +17,7 @@
 //
 // MainWindowController
 //
+
 @interface MainWindowController : NSWindowController
 {
 @private
