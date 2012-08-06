@@ -1,4 +1,4 @@
-//
+
 //  UsedFilesTreeViewController.m
 //  IsItUsed
 //
@@ -7,22 +7,19 @@
 //
 
 #import "UsedFilesTreeViewController.h"
-#import "../Data/UsedFile.h"
+#import "Core/UsedObject.h"
 
+
+//
+// UsedFilesTreeViewController
+//
 
 @implementation UsedFilesTreeViewController
 
-- (id)init
+- (void) setModel:(FilteredListModel*) newModel
 {
-  self = [super init];
-  if (self)
-  {
-  }
-  return self;
-}
-
-- (void)setModel:(FilteredListModel*) newModel
-{
+  NSAssert(newModel, @"Model have to be initialized");
+  //
   model = newModel;
   [TheTableView reloadData];
 }
@@ -34,7 +31,7 @@
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-  UsedFile* usedFile = [model objectAtIndex:row];
+  UsedObject* usedFile = [model objectAtIndex:row];
   return [usedFile valueForKey:[tableColumn identifier]];
 }
 

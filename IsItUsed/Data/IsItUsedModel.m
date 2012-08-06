@@ -8,6 +8,7 @@
 
 // IsItUsed
 #import "IsItUsedModel.h"
+#import "Core/GetProcessWithUsedObjects.h"
 
 //
 // IsItUsedModel
@@ -17,11 +18,12 @@
 
 - (id)init
 {
-  self = [super init];
-  if (self)
+  if (self = [super init])
   {
+    // create domain model data
+    usedFileFilter = [[UsedFileFilter alloc] init: GetProcessWithUsedObjects()];
     // create intrusive models
-    filteredListModel = [[FilteredListModel alloc] init];
+    filteredListModel = [[FilteredListModel alloc] initWithFilter: usedFileFilter];
     searchFieldModel = [[SearchFieldModel alloc] init];
   }
   return self;

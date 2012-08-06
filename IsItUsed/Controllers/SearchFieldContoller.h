@@ -18,14 +18,15 @@
 
 @interface SearchFieldContoller : NSObject
 {
-  @private
-    SearchFieldModel* model;
+@private
+  SearchFieldModel* model;
+  IBOutlet NSSearchField* searchField;
 }
 
 // interface
-- (void)setModel:(SearchFieldModel*) model;
+- (void) setModel:(SearchFieldModel*) model;
 
 // actions
-- (IBAction)searchTextChanged:(id)sender;
+- (IBAction) searchTextChanged:(id) sender;
 
 @end

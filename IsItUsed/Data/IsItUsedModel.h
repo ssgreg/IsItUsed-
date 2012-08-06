@@ -18,11 +18,15 @@
 //
 @interface IsItUsedModel : NSObject
 {
-  @private
-    FilteredListModel* filteredListModel;
-    SearchFieldModel* searchFieldModel;
+@private
+  // data
+  UsedFileFilter* usedFileFilter;
+  // models
+  FilteredListModel* filteredListModel;
+  SearchFieldModel* searchFieldModel;
 }
 
+// interface
 - (FilteredListModel*)filteredListModel;
 - (SearchFieldModel*)searchFieldModel;
 

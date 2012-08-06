@@ -22,16 +22,17 @@
   {
     // primary application model
     appModel = [[IsItUsedModel alloc] init];
+    // controllers
+    mainWindowController = [[MainWindowController alloc] init];
+    [mainWindowController setModel: appModel];
   }
   return self;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-  [usedFilesTreeViewController setModel:[appModel filteredListModel]];
-  [searchFieldController setModel:[appModel searchFieldModel]];
-  // TODO: View responsibility | Need to move
-  [searchField becomeFirstResponder];
+  // make main window active
+  [[mainWindowController window] makeKeyAndOrderFront: mainWindowController];
 }
 
 @end

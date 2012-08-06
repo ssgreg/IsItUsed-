@@ -8,7 +8,6 @@
 
 // IsItUsed
 #import "FilteredListModel.h"
-#import "UsedFile.h"
 
 
 //
@@ -17,29 +16,23 @@
 
 @implementation FilteredListModel
 
-- (id)init
+- (id) initWithFilter:(UsedFileFilter*)filter
 {
-  self = [super init];
-  if (self)
+  NSAssert(filter, @"Filter have to be initialized");
+  //
+  if (self = [super init])
   {
-    NSMutableArray* dataArray = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < 1000; ++i)
-    {
-      [dataArray addObject:[[UsedFile alloc] init]];
-    }
-    
-    usedFileFilter = [[UsedFileFilter alloc] init: dataArray];
+    usedFileFilter = filter;
   }
   return self;
 }
 
-- (NSInteger)count
+- (NSInteger) count
 {
   return [[usedFileFilter filteredFiles] count];
 }
 
-- (id)objectAtIndex:(NSInteger) index
+- (id) objectAtIndex:(NSInteger) index
 {
   return [[usedFileFilter filteredFiles] objectAtIndex: index];
 }

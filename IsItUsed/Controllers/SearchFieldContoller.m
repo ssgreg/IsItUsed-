@@ -13,16 +13,25 @@
 //
 // SearchFieldController
 //
+
 @implementation SearchFieldContoller
 
-- (void)setModel:(SearchFieldModel*) newModel;
+- (void) setModel:(SearchFieldModel*) newModel;
 {
+  NSAssert(newModel, @"Model have to be initialized");
+  //
   model = newModel;
 }
 
-- (IBAction)searchTextChanged:(id)sender
+- (IBAction) searchTextChanged:(id) sender
 {
   [model setSearchText:[sender stringValue]];
+}
+
+- (void) awakeFromNib
+{
+  // set up UI
+  [searchField becomeFirstResponder];
 }
 
 @end

@@ -21,14 +21,11 @@
 
 - (id)init:(NSMutableArray*) usedFiles
 {
-  self = [super init];
-  if (self)
+  if (self = [super init])
   {
     allFiles = usedFiles;
     filteredFiles = allFiles;
   }
-  
-  NSMutableArray* temp = GetProcessWithUsedObjects();
   return self;
 }
 

@@ -11,17 +11,20 @@
 //
 // UsedFileFilter
 //
+
 @interface UsedFileFilter : NSObject
 {
-  @private
-    NSString* filter;
-    NSMutableArray* allFiles;
-    NSMutableArray* filteredFiles;
+@private
+  NSString* filter;
+  NSMutableArray* allFiles;
+  NSMutableArray* filteredFiles;
 }
 
+// properties
 @property (readonly) NSMutableArray* filteredFiles;
 
-- (id)init:(NSMutableArray*) usedFiles;
-- (void)setFilter:(NSString*) filter;
+// interface
+- (id) init:(NSMutableArray*) usedFiles;
+- (void) setFilter:(NSString*) filter;
 
 @end

@@ -15,13 +15,16 @@
 //
 // FilteredListModel
 //
+
 @interface FilteredListModel : NSObject
 {
   @private
     UsedFileFilter* usedFileFilter;
 }
 
-- (NSInteger)count;
-- (id)objectAtIndex:(NSInteger) index;
+// interface
+- (id) initWithFilter:(UsedFileFilter*)filter;
+- (NSInteger) count;
+- (id) objectAtIndex:(NSInteger) index;
 
 @end

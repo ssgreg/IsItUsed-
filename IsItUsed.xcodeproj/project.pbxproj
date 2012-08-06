@@ -18,7 +18,6 @@
 		EE18BC7015BFF3A5003EC499 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE18BC6E15BFF3A5003EC499 /* InfoPlist.strings */; };
 		EE18BC7315BFF3A5003EC499 /* IsItUsedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC7215BFF3A5003EC499 /* IsItUsedTests.m */; };
 		EE18BC8915C021F2003EC499 /* UsedFilesTreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC8815C021F2003EC499 /* UsedFilesTreeViewController.m */; };
-		EE18BC8D15C02830003EC499 /* UsedFile.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC8C15C02830003EC499 /* UsedFile.m */; };
 		EE18BC9715C10719003EC499 /* UsedFileFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC9615C10719003EC499 /* UsedFileFilter.m */; };
 		EE18BC9A15C14470003EC499 /* IsItUsedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC9915C14470003EC499 /* IsItUsedModel.m */; };
 		EE18BC9D15C1474B003EC499 /* FilteredListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BC9C15C1474B003EC499 /* FilteredListModel.m */; };
@@ -27,6 +26,8 @@
 		EE18BCA815C24456003EC499 /* UsedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BCA715C24456003EC499 /* UsedObject.m */; };
 		EE18BCAB15C24A6E003EC499 /* ProcessWithUsedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BCAA15C24A6E003EC499 /* ProcessWithUsedObjects.m */; };
 		EE18BCB115C25B34003EC499 /* GetProcessWithUsedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BCB015C25B34003EC499 /* GetProcessWithUsedObjects.m */; };
+		EEEEF6E415C6A4FB009D13FB /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEEF6E315C6A4FB009D13FB /* MainWindowController.m */; };
+		EEEEF6E715C6A7EA009D13FB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEEEF6E615C6A7EA009D13FB /* MainWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +62,6 @@
 		EE18BC7215BFF3A5003EC499 /* IsItUsedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsItUsedTests.m; sourceTree = "<group>"; };
 		EE18BC8715C021F2003EC499 /* UsedFilesTreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsedFilesTreeViewController.h; path = Controllers/UsedFilesTreeViewController.h; sourceTree = "<group>"; };
 		EE18BC8815C021F2003EC499 /* UsedFilesTreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsedFilesTreeViewController.m; path = Controllers/UsedFilesTreeViewController.m; sourceTree = "<group>"; };
-		EE18BC8B15C02830003EC499 /* UsedFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsedFile.h; path = Data/UsedFile.h; sourceTree = "<group>"; };
-		EE18BC8C15C02830003EC499 /* UsedFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsedFile.m; path = Data/UsedFile.m; sourceTree = "<group>"; };
 		EE18BC9515C10719003EC499 /* UsedFileFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsedFileFilter.h; path = Data/UsedFileFilter.h; sourceTree = "<group>"; };
 		EE18BC9615C10719003EC499 /* UsedFileFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsedFileFilter.m; path = Data/UsedFileFilter.m; sourceTree = "<group>"; };
 		EE18BC9815C14470003EC499 /* IsItUsedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IsItUsedModel.h; path = Data/IsItUsedModel.h; sourceTree = "<group>"; };
@@ -77,8 +76,11 @@
 		EE18BCA715C24456003EC499 /* UsedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsedObject.m; path = Core/UsedObject.m; sourceTree = "<group>"; };
 		EE18BCA915C24A6E003EC499 /* ProcessWithUsedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProcessWithUsedObjects.h; path = Core/ProcessWithUsedObjects.h; sourceTree = "<group>"; };
 		EE18BCAA15C24A6E003EC499 /* ProcessWithUsedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProcessWithUsedObjects.m; path = Core/ProcessWithUsedObjects.m; sourceTree = "<group>"; };
-		EE18BCAF15C25B34003EC499 /* GetProcessWithUsedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; name = GetProcessWithUsedObjects.h; path = Core/GetProcessWithUsedObjects.h; sourceTree = "<group>"; };
+		EE18BCAF15C25B34003EC499 /* GetProcessWithUsedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetProcessWithUsedObjects.h; path = Core/GetProcessWithUsedObjects.h; sourceTree = "<group>"; };
 		EE18BCB015C25B34003EC499 /* GetProcessWithUsedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetProcessWithUsedObjects.m; path = Core/GetProcessWithUsedObjects.m; sourceTree = "<group>"; };
+		EEEEF6E215C6A4FB009D13FB /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainWindowController.h; path = Controllers/MainWindowController.h; sourceTree = "<group>"; };
+		EEEEF6E315C6A4FB009D13FB /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainWindowController.m; path = Controllers/MainWindowController.m; sourceTree = "<group>"; };
+		EEEEF6E615C6A7EA009D13FB /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,15 +146,11 @@
 		EE18BC4E15BFF3A5003EC499 /* IsItUsed */ = {
 			isa = PBXGroup;
 			children = (
+				EE312B8A15C8F33200490C66 /* XIB */,
 				EE18BCA515C2420C003EC499 /* Core */,
 				EE18BCA415C24172003EC499 /* DomenModel */,
-				EE18BC8E15C02F64003EC499 /* Views */,
-				EE18BC8A15C02815003EC499 /* Data */,
+				EE18BC8A15C02815003EC499 /* Models */,
 				EE18BC8515C0219E003EC499 /* Controllers */,
-				EE18BC8015C01172003EC499 /* Controls */,
-				EE18BC5A15BFF3A5003EC499 /* AppDelegate.h */,
-				EE18BC5B15BFF3A5003EC499 /* AppDelegate.m */,
-				EE18BC5D15BFF3A5003EC499 /* MainMenu.xib */,
 				EE18BC4F15BFF3A5003EC499 /* Supporting Files */,
 			);
 			path = IsItUsed;
@@ -189,16 +187,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EE18BC8015C01172003EC499 /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Controls;
-			sourceTree = "<group>";
-		};
 		EE18BC8515C0219E003EC499 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE18BC5A15BFF3A5003EC499 /* AppDelegate.h */,
+				EE18BC5B15BFF3A5003EC499 /* AppDelegate.m */,
+				EEEEF6E215C6A4FB009D13FB /* MainWindowController.h */,
+				EEEEF6E315C6A4FB009D13FB /* MainWindowController.m */,
 				EE18BC8715C021F2003EC499 /* UsedFilesTreeViewController.h */,
 				EE18BC8815C021F2003EC499 /* UsedFilesTreeViewController.m */,
 				EE18BCA115C159FA003EC499 /* SearchFieldContoller.h */,
@@ -207,13 +202,9 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		EE18BC8A15C02815003EC499 /* Data */ = {
+		EE18BC8A15C02815003EC499 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EE18BC8B15C02830003EC499 /* UsedFile.h */,
-				EE18BC8C15C02830003EC499 /* UsedFile.m */,
-				EE18BC9515C10719003EC499 /* UsedFileFilter.h */,
-				EE18BC9615C10719003EC499 /* UsedFileFilter.m */,
 				EE18BC9815C14470003EC499 /* IsItUsedModel.h */,
 				EE18BC9915C14470003EC499 /* IsItUsedModel.m */,
 				EE18BC9B15C1474B003EC499 /* FilteredListModel.h */,
@@ -221,19 +212,14 @@
 				EE18BC9E15C148FB003EC499 /* SearchFieldModel.h */,
 				EE18BC9F15C148FC003EC499 /* SearchFieldModel.m */,
 			);
-			name = Data;
-			sourceTree = "<group>";
-		};
-		EE18BC8E15C02F64003EC499 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		EE18BCA415C24172003EC499 /* DomenModel */ = {
 			isa = PBXGroup;
 			children = (
+				EE18BC9515C10719003EC499 /* UsedFileFilter.h */,
+				EE18BC9615C10719003EC499 /* UsedFileFilter.m */,
 			);
 			name = DomenModel;
 			sourceTree = "<group>";
@@ -249,6 +235,15 @@
 				EE18BCB015C25B34003EC499 /* GetProcessWithUsedObjects.m */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		EE312B8A15C8F33200490C66 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				EE18BC5D15BFF3A5003EC499 /* MainMenu.xib */,
+				EEEEF6E615C6A7EA009D13FB /* MainWindow.xib */,
+			);
+			name = XIB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +320,7 @@
 				EE18BC5315BFF3A5003EC499 /* InfoPlist.strings in Resources */,
 				EE18BC5915BFF3A5003EC499 /* Credits.rtf in Resources */,
 				EE18BC5F15BFF3A5003EC499 /* MainMenu.xib in Resources */,
+				EEEEF6E715C6A7EA009D13FB /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +358,6 @@
 				EE18BC5515BFF3A5003EC499 /* main.m in Sources */,
 				EE18BC5C15BFF3A5003EC499 /* AppDelegate.m in Sources */,
 				EE18BC8915C021F2003EC499 /* UsedFilesTreeViewController.m in Sources */,
-				EE18BC8D15C02830003EC499 /* UsedFile.m in Sources */,
 				EE18BC9715C10719003EC499 /* UsedFileFilter.m in Sources */,
 				EE18BC9A15C14470003EC499 /* IsItUsedModel.m in Sources */,
 				EE18BC9D15C1474B003EC499 /* FilteredListModel.m in Sources */,
@@ -371,6 +366,7 @@
 				EE18BCA815C24456003EC499 /* UsedObject.m in Sources */,
 				EE18BCAB15C24A6E003EC499 /* ProcessWithUsedObjects.m in Sources */,
 				EE18BCB115C25B34003EC499 /* GetProcessWithUsedObjects.m in Sources */,
+				EEEEF6E415C6A4FB009D13FB /* MainWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +482,7 @@
 				GCC_PREFIX_HEADER = "IsItUsed/IsItUsed-Prefix.pch";
 				INFOPLIST_FILE = "IsItUsed/IsItUsed-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$SRCROOT/IsItUsed/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -497,6 +494,7 @@
 				GCC_PREFIX_HEADER = "IsItUsed/IsItUsed-Prefix.pch";
 				INFOPLIST_FILE = "IsItUsed/IsItUsed-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$SRCROOT/IsItUsed/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

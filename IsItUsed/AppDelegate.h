@@ -8,8 +8,7 @@
 
 // IsItUsed
 #import "Data/IsItUsedModel.h"
-#import "Controllers/UsedFilesTreeViewController.h"
-#import "Controllers/SearchFieldContoller.h"
+#import "Controllers/MainWindowController.h"
 // Cocoa
 #import <Cocoa/Cocoa.h>
 
@@ -19,13 +18,9 @@
 //
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 {
-  @private
-    IBOutlet NSSearchField* searchField;
-    IBOutlet UsedFilesTreeViewController* usedFilesTreeViewController;
-    IBOutlet SearchFieldContoller* searchFieldController;
-    IsItUsedModel* appModel;
+@private
+  IsItUsedModel* appModel;
+  MainWindowController* mainWindowController;
 }
-
-@property (assign) IBOutlet NSWindow *window;
 
 @end

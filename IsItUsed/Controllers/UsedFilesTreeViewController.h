@@ -15,13 +15,15 @@
 //
 // UsedFilesTreeViewController
 //
+
 @interface UsedFilesTreeViewController : NSObject<NSTableViewDataSource>
 {
-  @private
-    IBOutlet NSTableView* TheTableView;
-    FilteredListModel* model;
+@private
+  IBOutlet NSTableView* TheTableView;
+  FilteredListModel* model;
 }
 
-- (void)setModel:(FilteredListModel*) model;
+// interface
+- (void) setModel:(FilteredListModel*) model;
 
 @end
