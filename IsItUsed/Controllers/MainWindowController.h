@@ -14,6 +14,9 @@
 #import <Cocoa/Cocoa.h>
 
 
+//
+// MainWindowController
+//
 @interface MainWindowController : NSWindowController
 {
 @private

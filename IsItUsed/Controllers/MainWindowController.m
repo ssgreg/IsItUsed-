@@ -9,6 +9,9 @@
 #import "MainWindowController.h"
 
 
+//
+// MainWindowController
+//
 @implementation MainWindowController
 
 - (id) init
