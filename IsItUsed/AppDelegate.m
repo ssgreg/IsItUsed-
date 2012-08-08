@@ -29,10 +29,17 @@
   return self;
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+- (void) applicationDidFinishLaunching:(NSNotification *)aNotification
 {
   // make main window active
   [[mainWindowController window] makeKeyAndOrderFront: mainWindowController];
+}
+
+// actions
+
+- (IBAction) OnFind:(id)sender
+{
+  return [mainWindowController findRequested: sender];
 }
 
 @end

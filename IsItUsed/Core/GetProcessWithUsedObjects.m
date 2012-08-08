@@ -85,7 +85,7 @@ ProcessWithUsedObjects* MakeProcessWithUsedObjects(pid_t pid)
   }
   
   NSMutableArray* usedObjects = MakeUsedObjectsForProcess(pid, taskInfo.pbsd.pbi_nfiles);
-  if (!usedObjects)
+  if (!usedObjects || usedObjects.count == 0)
   {
     return 0;
   }
@@ -127,9 +127,13 @@ NSMutableArray* GetProcessWithUsedObjects()
     {
       continue;
     }
-      
-    // make another object
-    [processes addObject: MakeProcessWithUsedObjects(pid)];
+    
+    ProcessWithUsedObjects* object = MakeProcessWithUsedObjects(pid);
+    if (object)
+    {
+      // make another object
+      [processes addObject: object];
+    }
   }
 
   // thats all!

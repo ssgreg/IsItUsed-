@@ -15,29 +15,49 @@
 
 @implementation MainWindowController
 
+// interface
+
 - (id) init
 {
   if (self = [super initWithWindowNibName: @"MainWindow"])
   {
     // force creation of all IB outlets (used in setModel)
     [self window];
+    [self makeSearchFieldFirstResponder];
   }
   return self;
 }
 
 - (void) setModel:(IsItUsedModel*) newModel
 {
-  NSAssert(newModel, @"Model have to be initialized");
-  NSAssert(usedFilesTreeViewController && searchFieldController, @"Where are my controllers?");
+  NSAssert(newModel, @"Passed model is empty!");
+  NSAssert(usedObjectTableViewController, @"Controller does not initialized from XIB!");
   //
   appModel = newModel;
   // controllers
-  [usedFilesTreeViewController setModel: [appModel filteredListModel]];
-  [searchFieldController setModel: [appModel searchFieldModel]];
+  [usedObjectTableViewController setModel: [appModel usedObjectListModel]];
 }
 
-- (IBAction)pushMeClicked:(id)sender
+// actions
+
+- (IBAction) pushMeClicked:(id)sender
 {
+}
+
+- (IBAction) searchTextChanged:(id) sender
+{
+}
+
+- (IBAction) findRequested:(id)sender
+{
+  [self makeSearchFieldFirstResponder];
+}
+
+// private
+
+- (void) makeSearchFieldFirstResponder
+{
+  [searchField becomeFirstResponder];
 }
 
 @end

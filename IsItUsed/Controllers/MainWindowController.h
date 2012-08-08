@@ -7,9 +7,8 @@
 //
 
 // IsItUsed
-#import "Data/IsItUsedModel.h"
-#import "Controllers/SearchFieldContoller.h"
-#import "Controllers/UsedFilesTreeViewController.h"
+#import "Models/IsItUsedModel.h"
+#import "Controllers/UsedObjectTableViewController.h"
 // Cocoa
 #import <Cocoa/Cocoa.h>
 
@@ -21,12 +20,19 @@
 @interface MainWindowController : NSWindowController
 {
 @private
-  IBOutlet UsedFilesTreeViewController* usedFilesTreeViewController;
-  IBOutlet SearchFieldContoller* searchFieldController;
+  IBOutlet UsedObjectTableViewController* usedObjectTableViewController;
+  IBOutlet NSSearchField* searchField;
   IsItUsedModel* appModel;
 }
 
 // interface
+
 - (void) setModel:(IsItUsedModel*) model;
+
+// actions
+
+- (IBAction) pushMeClicked:(id)sender;
+- (IBAction) searchTextChanged:(id) sender;
+- (IBAction) findRequested:(id)sender;
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "UsedFileFilter.h"
-#import "../Data/UsedFile.h"
 #import "../Core/GetProcessWithUsedObjects.h"
 
 
@@ -38,11 +37,11 @@
   NSMutableIndexSet* discardedItems = [NSMutableIndexSet indexSet];
   for (int i = 0; i < [filteredFiles count]; ++i)
   {
-    NSRange range = [[[filteredFiles objectAtIndex:i] usedFile] rangeOfString:filter];
-    if (range.location != NSNotFound)
-    {
-      [discardedItems addIndex:i];
-    }
+//    NSRange range = [[[filteredFiles objectAtIndex:i] usedFile] rangeOfString:filter];
+//    if (range.location != NSNotFound)
+//    {
+//      [discardedItems addIndex:i];
+//    }
   }
   [filteredFiles removeObjectsAtIndexes:discardedItems];
 }

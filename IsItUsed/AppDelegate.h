@@ -7,7 +7,7 @@
 //
 
 // IsItUsed
-#import "Data/IsItUsedModel.h"
+#import "Models/IsItUsedModel.h"
 #import "Controllers/MainWindowController.h"
 // Cocoa
 #import <Cocoa/Cocoa.h>
@@ -22,5 +22,8 @@
   IsItUsedModel* appModel;
   MainWindowController* mainWindowController;
 }
+
+// actions
+- (IBAction) OnFind:(id)sender;
 
 @end
