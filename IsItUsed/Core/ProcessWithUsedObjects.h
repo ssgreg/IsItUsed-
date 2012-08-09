@@ -36,5 +36,6 @@
 @property (readonly) pid_t pid;
 @property (readonly) NSString* appName;
 @property (readonly) NSImage* appIcon;
+@property (readonly) NSMutableArray* usedObjects;
 
 @end

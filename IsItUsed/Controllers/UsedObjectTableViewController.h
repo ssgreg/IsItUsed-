@@ -16,11 +16,12 @@
 // UsedObjectTableViewController
 //
 
-@interface UsedObjectTableViewController : NSObject<NSTableViewDataSource, NSTableViewDelegate>
+@interface UsedObjectTableViewController : NSObject<NSOutlineViewDataSource, NSOutlineViewDelegate>
 {
 @private
-  IBOutlet NSTableView* theTableView;
+  IBOutlet NSOutlineView* theOutlineView;
   UsedObjectListModel* theModel;
+  NSMutableArray* theBuffer;
 }
 
 // interface

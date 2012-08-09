@@ -19,20 +19,71 @@
 
 // interface
 
-- (id) initWithApplicationName:(NSString*) newApplicationName usedObjectPath:(NSString*) newUsedObjectPath
+- (id) initWithUsedObject:(UsedObject*) usedObject;
 {
   if (self = [super init])
   {
-    applicationName = newApplicationName;
-    usedObjectPath = newUsedObjectPath;
+    theUsedObject = usedObject;
   }
   return self;
 }
 
-// properties
+- (NSString*) path
+{
+  return [theUsedObject path];
+}
 
-@synthesize applicationName;
-@synthesize usedObjectPath;
+- (NSString*) name
+{
+  NSString* path = [theUsedObject path];
+  NSRange range = [path rangeOfCharacterFromSet: [NSCharacterSet characterSetWithCharactersInString: @"/"] options: NSBackwardsSearch];
+  return [path substringFromIndex: range.location + 1];
+}
+
+@end
+
+
+//
+// ProcessInfo
+//
+
+@implementation ProcessInfo
+
+// interface
+
+- (id) initProcessWithUsedObjects:(ProcessWithUsedObjects*) processWithUsedObjects
+{
+  if (self = [super init])
+  {
+    theProcess = processWithUsedObjects;
+  }
+  return self;
+}
+
+- (NSInteger) usedObjectInfoCount
+{
+  return [[theProcess usedObjects] count];
+}
+
+- (UsedObjectInfo*) usedObjectAtIndex:(NSInteger) index
+{
+  return [[UsedObjectInfo alloc] initWithUsedObject: [[theProcess usedObjects] objectAtIndex: index]];
+}
+
+- (NSString*) name
+{
+  NSString* appName = [theProcess appName];
+  if (appName == nil)
+  {
+    appName = [theProcess name];
+  }
+  return appName;
+}
+
+- (NSImage*) icon
+{
+  return [theProcess appIcon];
+}
 
 @end
 
@@ -54,21 +105,16 @@
   return self;
 }
 
-- (NSInteger) count
+- (NSInteger) processInfoCount
 {
   return [[usedObjectFilter filteredFiles] count];
 }
 
-- (UsedObjectInfo*) objectAtIndex:(NSInteger) index
+- (ProcessInfo*) processInfoAtIndex:(NSInteger) index
 {
   ProcessWithUsedObjects* process = [[usedObjectFilter filteredFiles] objectAtIndex: index];
-  NSString* name = [process appName];
-  if (!name)
-  {
-    name = [process name];
-  }
-  return [[UsedObjectInfo alloc] initWithApplicationName: name usedObjectPath: @"path"];
-//  return NULL; //return [[usedFileFilter filteredFiles] objectAtIndex: index];
+  ProcessInfo* processInfo = [[ProcessInfo alloc] initProcessWithUsedObjects: process];
+  return processInfo;
 }
 
 @end

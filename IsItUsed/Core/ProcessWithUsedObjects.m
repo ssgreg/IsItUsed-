@@ -54,5 +54,7 @@
 @synthesize name;
 @synthesize pid;
 @synthesize appName;
+@synthesize appIcon;
+@synthesize usedObjects;
 
 @end

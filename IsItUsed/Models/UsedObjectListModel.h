@@ -9,6 +9,7 @@
 // IsItUsed
 #import "Data/UsedFileFilter.h"
 #import "Core/UsedObject.h"
+#import "Core/ProcessWithUsedObjects.h"
 // Foundation
 #import <Foundation/Foundation.h>
 
@@ -20,20 +21,37 @@
 @interface UsedObjectInfo : NSObject
 {
 @private
-  NSString* applicationName;
-  NSString* usedObjectPath;
+  UsedObject* theUsedObject;
 }
 
 // interface
 
-- (id) initWithApplicationName:(NSString*) applicationName usedObjectPath:(NSString*) usedObjectPath;
-
-// properties
-
-@property (readonly) NSString* applicationName;
-@property (readonly) NSString* usedObjectPath;
+- (id) initWithUsedObject:(UsedObject*) usedObject;
+- (NSString*) path;
+- (NSString*) name;
 
 @end
+
+
+//
+// ProcessInfo
+//
+
+@interface ProcessInfo : NSObject
+{
+@private
+  ProcessWithUsedObjects* theProcess;
+}
+
+// interface
+
+- (id) initProcessWithUsedObjects:(ProcessWithUsedObjects*) processWithUsedObjects;
+- (NSInteger) usedObjectInfoCount;
+- (UsedObjectInfo*) usedObjectAtIndex:(NSInteger) index;
+- (NSString*) name;
+- (NSImage*) icon;
+
+@end		
 
 
 //
@@ -49,7 +67,7 @@
 // interface
 
 - (id) initWithObjectFilter:(UsedFileFilter*) filter;
-- (NSInteger) count;
-- (UsedObjectInfo*) objectAtIndex:(NSInteger) index;
+- (NSInteger) processInfoCount;
+- (ProcessInfo*) processInfoAtIndex:(NSInteger) index;
 
 @end
