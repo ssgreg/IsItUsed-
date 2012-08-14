@@ -344,8 +344,8 @@
 															<reference key="NSColor" ref="124156829"/>
 														</object>
 													</object>
-													<object class="NSTextFieldCell" key="NSDataCell" id="738184443">
-														<int key="NSCellFlags">337641537</int>
+													<object class="NSTextFieldCell" key="NSDataCell" id="514587823">
+														<int key="NSCellFlags">67108928</int>
 														<int key="NSCellFlags2">272631808</int>
 														<string key="NSContents">Text</string>
 														<reference key="NSSupport" ref="598620075"/>
@@ -355,7 +355,7 @@
 															<int key="NSColorSpace">6</int>
 															<string key="NSCatalogName">System</string>
 															<string key="NSColorName">controlColor</string>
-															<object class="NSColor" key="NSColor" id="380309883">
+															<object class="NSColor" key="NSColor" id="1046495341">
 																<int key="NSColorSpace">3</int>
 																<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 															</object>
@@ -403,7 +403,7 @@
 										<int key="NSColorSpace">6</int>
 										<string key="NSCatalogName">System</string>
 										<string key="NSColorName">controlBackgroundColor</string>
-										<reference key="NSColor" ref="380309883"/>
+										<reference key="NSColor" ref="1046495341"/>
 									</object>
 									<int key="NScvFlags">4</int>
 								</object>
@@ -758,7 +758,7 @@
 						<int key="objectID">178</int>
 						<reference key="object" ref="730141784"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="738184443"/>
+							<reference ref="514587823"/>
 						</array>
 						<reference key="parent" ref="875412414"/>
 					</object>
@@ -784,7 +784,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">322</int>
-						<reference key="object" ref="738184443"/>
+						<reference key="object" ref="514587823"/>
 						<reference key="parent" ref="730141784"/>
 					</object>
 				</array>

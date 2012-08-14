@@ -86,11 +86,6 @@
   return NSCellHitNone;
 }
 
-- (void)editWithFrame:(NSRect)aRect inView:(NSView *)controlView editor:(NSText *)textObj delegate:(id)anObject event:(NSEvent *)theEvent {
-//  aRect = [self _titleFrameForInteriorFrame:aRect];
-//  [super editWithFrame:aRect inView:controlView editor:textObj delegate:anObject event:theEvent];
-}
-
 - (void) selectWithFrame:(NSRect) aRect inView:(NSView*) controlView editor:(NSText*) textObj delegate:(id) anObject start:(NSInteger) selStart length:(NSInteger) selLength
 {
   aRect = [self titleFrame: aRect];
