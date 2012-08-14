@@ -95,31 +95,25 @@
 
 - (NSRect) imageFrame:(NSRect) frame
 {
+  NSInteger const leftPadding = 8;
+  //
   NSRect result = frame;
-  result.size.width = theImageCell.image.size.width;
-  //  // Inset the top
-  //  result.origin.y += IMAGE_INSET;
-  //  result.size.height -= 2*IMAGE_INSET;
-  //  // Inset the left
-  //  result.origin.x += IMAGE_INSET;
-  //  // Make the width match the aspect ratio based on the height
-  //  result.size.width = ceil(result.size.height * ASPECT_RATIO);
+  // max width is height
+  result.size.width = result.size.height;
+  //
+  result.origin.x += leftPadding;
   return result;
 }
 
 - (NSRect) titleFrame:(NSRect) frame
 {
+  NSInteger const leftPadding = 4;
+  //
   NSRect imageFrame = [self imageFrame: frame];
   NSRect result = frame;
-  result.origin.x += imageFrame.size.width;
-  //  // Move our inset to the left of the image frame
-  //  result.origin.x = NSMaxX(imageFrame) + INSET_FROM_IMAGE_TO_TEXT;
-  //  // Go as wide as we can
-  //  result.size.width = NSMaxX(frame) - NSMinX(result);
-  //  // Move the title above the Y centerline of the image.
-  //  NSSize naturalSize = [super cellSize];
-  //  result.origin.y = floor(NSMidY(imageFrame) - naturalSize.height - INSET_FROM_IMAGE_TO_TEXT);
-  //  result.size.height = naturalSize.height;
+  // title just after image
+  result.origin.x = NSMaxX(imageFrame) + leftPadding;
+  result.size.width = NSMaxX(frame) - NSMinX(result);
   return result;
 }
 
