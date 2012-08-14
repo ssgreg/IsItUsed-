@@ -117,4 +117,13 @@
   return processInfo;
 }
 
+- (void) update
+{
+  [delegate update];
+}
+
+// properties
+
+@synthesize delegate;
+
 @end

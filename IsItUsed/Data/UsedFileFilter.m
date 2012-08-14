@@ -33,15 +33,20 @@
   filter = newFilter;
   filteredFiles = [[NSMutableArray alloc] initWithArray:allFiles];
   
+  if ([filter length] == 0)
+  {
+    return;
+  }
+  
   // remove filtered items
   NSMutableIndexSet* discardedItems = [NSMutableIndexSet indexSet];
   for (int i = 0; i < [filteredFiles count]; ++i)
   {
-//    NSRange range = [[[filteredFiles objectAtIndex:i] usedFile] rangeOfString:filter];
-//    if (range.location != NSNotFound)
-//    {
-//      [discardedItems addIndex:i];
-//    }
+    NSRange range = [[[filteredFiles objectAtIndex:i] name] rangeOfString:filter];
+    if (range.location == NSNotFound)
+    {
+      [discardedItems addIndex:i];
+    }
   }
   [filteredFiles removeObjectsAtIndexes:discardedItems];
 }

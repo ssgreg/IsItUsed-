@@ -28,5 +28,6 @@
 // interface
 
 - (UsedObjectListModel*) usedObjectListModel;
+- (void) setFilterText:(NSString*) filterText;
 
 @end

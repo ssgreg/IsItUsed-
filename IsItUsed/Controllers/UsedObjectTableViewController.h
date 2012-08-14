@@ -13,10 +13,28 @@
 
 
 //
+// UsedObjectImageTextCell
+//
+
+@interface UsedObjectImageTextCell : NSTextFieldCell
+{
+@private
+  NSImageCell* theImageCell;
+}
+
+// interface
+
+- (NSImage *)image;
+- (void)setImage:(NSImage *)image;
+
+@end
+
+
+//
 // UsedObjectTableViewController
 //
 
-@interface UsedObjectTableViewController : NSObject<NSOutlineViewDataSource, NSOutlineViewDelegate>
+@interface UsedObjectTableViewController : NSObject<NSOutlineViewDataSource, NSOutlineViewDelegate, SimpleUpdateProtocol>
 {
 @private
   IBOutlet NSOutlineView* theOutlineView;

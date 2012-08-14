@@ -36,4 +36,10 @@
   return usedObjectListModel;
 }
 
+- (void) setFilterText:(NSString*) filterText
+{
+  [usedFileFilter setFilter: filterText];
+  [usedObjectListModel update];
+}
+
 @end

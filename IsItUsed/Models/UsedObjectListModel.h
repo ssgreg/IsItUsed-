@@ -15,6 +15,20 @@
 
 
 //
+// SimpleUpdateProtocol
+//
+
+@protocol SimpleUpdateProtocol <NSObject>
+
+// interface
+
+- (void) update;
+
+@end
+
+
+
+//
 // UsedObjectInfo
 //
 
@@ -62,6 +76,7 @@
 {
 @private
   UsedFileFilter* usedObjectFilter;
+  __weak id<SimpleUpdateProtocol> delegate;
 }
 
 // interface
@@ -69,5 +84,10 @@
 - (id) initWithObjectFilter:(UsedFileFilter*) filter;
 - (NSInteger) processInfoCount;
 - (ProcessInfo*) processInfoAtIndex:(NSInteger) index;
+- (void) update;
+
+// properties
+
+@property (weak) id <SimpleUpdateProtocol> delegate;
 
 @end

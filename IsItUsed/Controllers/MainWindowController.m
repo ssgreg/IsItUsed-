@@ -46,6 +46,7 @@
 
 - (IBAction) searchTextChanged:(id) sender
 {
+  [appModel setFilterText: [sender stringValue]];
 }
 
 - (IBAction) findRequested:(id)sender
