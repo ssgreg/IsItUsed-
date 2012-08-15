@@ -69,7 +69,7 @@
 {
   NSPoint point = [controlView convertPoint: [event locationInWindow] fromView: nil];
   
-  // delegate hit testing to subcells
+  // delegate hit testing to sub cells
   if (theImageCell)
   {
     NSRect imageFrame = [self imageFrame: frame];
@@ -116,6 +116,15 @@
   result.size.width = NSMaxX(frame) - NSMinX(result);
   return result;
 }
+
+@end
+
+
+//
+// UsedObjectCell
+//
+
+@implementation UsedObjectCell
 
 @end
 
@@ -182,58 +191,53 @@
   return false;
 }
 
-- (void)outlineView:(NSOutlineView *)outlineView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
-{
-  NSTextFieldCell* customCell = cell;
-  customCell.stringValue = [item name];
-  customCell.image = [item icon];
-  
-}
-
-//- (id) outlineView:(NSOutlineView*) outlineView objectValueForTableColumn:(NSTableColumn*) tableColumn byItem:(id) item
-//{
-//  return item;
-//}
-
 // NSOutlineViewDelegate interface
 
-//- (NSView*) outlineView:(NSOutlineView*) outlineView viewForTableColumn:(NSTableColumn*) tableColumn item:(id) item
-//{
-//  NSString* identifier = [tableColumn identifier];
-//  if ([identifier isEqualToString: @"applicationName"])
-//  {
-//    NSTableCellView *cellView = [outlineView makeViewWithIdentifier: identifier owner: self];
-//    //
-//    if ([item isKindOfClass: [ProcessInfo class]])
-//    {
-//      cellView.textField.stringValue = [item name];
-//      NSImage* image =[item icon];
-//      cellView.imageView.objectValue = [item icon];
-//    }
-//    else if ([item isKindOfClass: [UsedObjectInfo class]])
-//    {
-//      cellView.textField.stringValue = [item path];
-//      cellView.imageView.objectValue = nil;
-//    }
-//    return cellView;
-//  }
-//  else if ([identifier isEqualToString: @"usedObjectPath"])
-//  {
-//    NSTableCellView *cellView = [outlineView makeViewWithIdentifier: identifier owner: self];
-//    cellView.textField.stringValue = @"test";
-//    ////    NSImage* temp = [[NSRunningApplication runningApplicationWithProcessIdentifier: 2323] icon];
-//    ////    cellView.imageView.objectValue = temp;
-//    return cellView;
-//  }
-//  return nil;
-//}
+- (void)outlineView:(NSOutlineView *)outlineView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
+{
+  NSString* identifier = [tableColumn identifier];
+  if ([identifier isEqualToString: @"applicationName"])
+  {
+    if ([item isKindOfClass: [ProcessInfo class]])
+    {
+      UsedObjectImageTextCell* customCell = cell;
+      //
+      customCell.stringValue = [item name];
+      customCell.image = [item icon];
+      if (customCell.image == nil)
+      {
+        customCell.image = [NSImage imageNamed: @"NSApplicationIcon"];
+      }
+    }
+    else if ([item isKindOfClass: [UsedObjectInfo class]])
+    {
+      UsedObjectCell* customCell = cell;
+      customCell.stringValue = [item path];
+    }
+  }
+}
+
+- (NSCell *)outlineView:(NSOutlineView*) outlineView dataCellForTableColumn:(NSTableColumn*) tableColumn item:(id) item
+{
+  if (tableColumn != nil)
+  {
+    if ([item isKindOfClass: [ProcessInfo class]])
+    {
+      return [tableColumn dataCell];
+    }
+    else if ([item isKindOfClass: [UsedObjectInfo class]])
+    {
+      return theUsedObjectCell;
+    }
+  }
+  return nil;
+}
 
 // SimpleUpdateDelegate interface
 
 - (void) update
 {
   [theBuffer removeAllObjects];
-  [theOutlineView reloadData];
   [theOutlineView reloadData];
 }
 

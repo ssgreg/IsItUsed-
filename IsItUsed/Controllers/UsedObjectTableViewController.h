@@ -31,6 +31,14 @@
 
 
 //
+// UsedObjectCell
+//
+
+@interface UsedObjectCell : NSTextFieldCell
+@end
+
+
+//
 // UsedObjectTableViewController
 //
 
@@ -38,6 +46,7 @@
 {
 @private
   IBOutlet NSOutlineView* theOutlineView;
+  IBOutlet UsedObjectCell* theUsedObjectCell;
   UsedObjectListModel* theModel;
   NSMutableArray* theBuffer;
 }

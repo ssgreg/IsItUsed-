@@ -16,7 +16,7 @@
 
 @implementation UsedFileFilter
 
-@synthesize filteredFiles;
+// interface
 
 - (id)init:(NSMutableArray*) usedFiles
 {
@@ -50,5 +50,9 @@
   }
   [filteredFiles removeObjectsAtIndexes:discardedItems];
 }
+
+// properties
+
+@synthesize filteredFiles;
 
 @end
