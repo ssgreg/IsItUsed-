@@ -8,7 +8,54 @@
 
 // IsItUsed
 #import "IsItUsedModel.h"
-#import "Core/GetProcessWithUsedObjects.h"
+
+
+//
+// TextFilter
+//
+
+@interface TextFilter : NSObject<FilterProtocol>
+
+// inteface
+- (id) initWithText:(NSString*) text;
+
+@end
+
+@implementation TextFilter
+{
+@private
+  NSString* theText;
+}
+
+// inteface
+
+- (id) initWithText:(NSString*) text
+{
+  if (self = [super init])
+  {
+    theText = text;
+  }
+  return self;
+}
+
+// FilterProtocol interaface
+
+- (bool) filter:(id)object
+{
+  if ([self isEmpty])
+  {
+    return false;
+  }
+  NSRange range = [object rangeOfString: theText];
+  return range.location == NSNotFound;
+}
+
+- (bool) isEmpty
+{
+  return theText == nil || [theText length] == 0;
+}
+
+@end
 
 
 //
@@ -23,10 +70,7 @@
 {
   if (self = [super init])
   {
-    // create domain model data
-    usedFileFilter = [[UsedFileFilter alloc] init: GetProcessWithUsedObjects()];
-    // make models
-    usedObjectListModel = [[UsedObjectListModel alloc] initWithObjectFilter: usedFileFilter];
+    usedObjectListModel = [[UsedObjectListModel alloc] init];
   }
   return self;
 }
@@ -38,8 +82,7 @@
 
 - (void) setFilterText:(NSString*) filterText
 {
-  [usedFileFilter setFilter: filterText];
-  [usedObjectListModel update];
+  [usedObjectListModel setFilter: [[TextFilter alloc] initWithText: filterText]];
 }
 
 @end

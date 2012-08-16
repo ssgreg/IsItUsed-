@@ -250,6 +250,7 @@
 {
   [theBuffer removeAllObjects];
   [theOutlineView reloadData];
+  [theOutlineView expandItem:nil expandChildren:YES];
 }
 
 @end

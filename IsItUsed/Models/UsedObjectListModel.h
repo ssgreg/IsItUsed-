@@ -27,16 +27,38 @@
 @end
 
 
+//
+// FilterProtocol
+//
+
+@protocol FilterProtocol <NSObject>
+
+// interface
+
+- (bool) filter:(id) object;
+- (bool) isEmpty;
+
+@end
+
+
+//
+// FilterFacade
+//
+
+@interface FilterFacade : NSObject<FilterProtocol>
+
+// interface
+
+- (id) initWithFilterProtocol:(id<FilterProtocol>) filter;
+
+@end
+
 
 //
 // UsedObjectInfo
 //
 
 @interface UsedObjectInfo : NSObject
-{
-@private
-  UsedObject* theUsedObject;
-}
 
 // interface
 
@@ -52,16 +74,14 @@
 //
 
 @interface ProcessInfo : NSObject
-{
-@private
-  ProcessWithUsedObjects* theProcess;
-}
 
 // interface
 
 - (id) initProcessWithUsedObjects:(ProcessWithUsedObjects*) processWithUsedObjects;
 - (NSInteger) usedObjectInfoCount;
 - (UsedObjectInfo*) usedObjectAtIndex:(NSInteger) index;
+- (void) setFilter:(id<FilterProtocol>) filter;
+
 - (NSString*) name;
 - (NSImage*) icon;
 
@@ -73,18 +93,13 @@
 //
 
 @interface UsedObjectListModel : NSObject
-{
-@private
-  UsedFileFilter* usedObjectFilter;
-  __weak id<SimpleUpdateProtocol> delegate;
-}
 
 // interface
 
-- (id) initWithObjectFilter:(UsedFileFilter*) filter;
+- (id) init;
 - (NSInteger) processInfoCount;
 - (ProcessInfo*) processInfoAtIndex:(NSInteger) index;
-- (void) update;
+- (void) setFilter:(id<FilterProtocol>) filter;
 
 // properties
 

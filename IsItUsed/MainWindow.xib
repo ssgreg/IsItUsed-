@@ -97,14 +97,15 @@
 							<string key="NSToolbarItemPaletteLabel">Custom View</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSSearchField" key="NSToolbarItemView" id="395139164">
-								<nil key="NSNextResponder"/>
+								<reference key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {300, 22}}</string>
+								<reference key="NSSuperview"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSearchFieldCell" key="NSCell" id="380643081">
 									<int key="NSCellFlags">342884416</int>
-									<int key="NSCellFlags2">268436544</int>
+									<int key="NSCellFlags2">272630848</int>
 									<string key="NSContents"/>
 									<object class="NSFont" key="NSSupport" id="598620075">
 										<string key="NSName">LucidaGrande</string>
@@ -298,7 +299,7 @@
 											<string key="NSFrameSize">{400, 233}</string>
 											<reference key="NSSuperview" ref="1041212231"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="631871062"/>
+											<reference key="NSNextKeyView" ref="686844047"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -456,7 +457,7 @@
 							<string key="NSFrame">{{0, 21}, {400, 250}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="686844047"/>
+							<reference key="NSNextKeyView" ref="1041212231"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSHuggingPriority">{250, 250}</string>
 							<int key="NSsFlags">133680</int>
@@ -475,7 +476,6 @@
 							<string key="NSFrame">{{301, -2}, {100, 23}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:22</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="728516621">

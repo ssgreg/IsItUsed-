@@ -9,6 +9,7 @@
 // IsItUsed
 #import "UsedObjectListModel.h"
 #import "Core/ProcessWithUsedObjects.h"
+#import "Core/GetProcessWithUsedObjects.h"
 
 
 //
@@ -16,6 +17,10 @@
 //
 
 @implementation UsedObjectInfo
+{
+@private
+  UsedObject* theUsedObject;
+}
 
 // interface
 
@@ -48,26 +53,33 @@
 //
 
 @implementation ProcessInfo
+{
+@private
+  ProcessWithUsedObjects* theProcess;
+  NSArray* theFilteredUsedObjects;
+}
 
 // interface
 
-- (id) initProcessWithUsedObjects:(ProcessWithUsedObjects*) processWithUsedObjects
+- (id) initProcessWithUsedObjects:(ProcessWithUsedObjects*) processWithUsedObjects filter:(id<FilterProtocol>) filter
 {
   if (self = [super init])
   {
     theProcess = processWithUsedObjects;
+    [self updateIndexes: filter];
+
   }
   return self;
 }
 
 - (NSInteger) usedObjectInfoCount
 {
-  return [[theProcess usedObjects] count];
+  return [theFilteredUsedObjects count];
 }
 
 - (UsedObjectInfo*) usedObjectAtIndex:(NSInteger) index
 {
-  return [[UsedObjectInfo alloc] initWithUsedObject: [[theProcess usedObjects] objectAtIndex: index]];
+  return [theFilteredUsedObjects objectAtIndex: index];
 }
 
 - (NSString*) name
@@ -85,6 +97,25 @@
   return [theProcess appIcon];
 }
 
+// private
+
+- (void) updateIndexes:(id<FilterProtocol>) filter
+{
+  NSMutableArray* filteredUsedObjects = [[NSMutableArray alloc] init];
+  NSArray* allUsedObjects = [theProcess usedObjects];
+  //
+  for (NSInteger i = 0; i < [allUsedObjects count]; ++i)
+  {
+    UsedObject* usedObject = [allUsedObjects objectAtIndex: i];
+    UsedObjectInfo* usedObjectInfo = [[UsedObjectInfo alloc] initWithUsedObject: usedObject];
+    if (![filter filter: [usedObjectInfo name]])
+    {
+      [filteredUsedObjects addObject: usedObjectInfo];
+    }
+  }
+  theFilteredUsedObjects = filteredUsedObjects;
+}
+
 @end
 
 
@@ -93,33 +124,60 @@
 //
 
 @implementation UsedObjectListModel
+{
+@private
+  NSArray* theAllProcesses;
+  NSArray* theFilteredProcesses;
+  id<FilterProtocol> theFilter;
+  __weak id<SimpleUpdateProtocol> delegate;
+}
 
 // interface
 
-- (id) initWithObjectFilter:(UsedFileFilter*) newFilter
+- (id) init
 {
   if (self = [super init])
   {
-    usedObjectFilter = newFilter;
+    theAllProcesses = GetProcessWithUsedObjects();
+    [self setFilter: nil];
   }
   return self;
 }
 
 - (NSInteger) processInfoCount
 {
-  return [[usedObjectFilter filteredFiles] count];
+  return [theFilteredProcesses count];
 }
 
 - (ProcessInfo*) processInfoAtIndex:(NSInteger) index
 {
-  ProcessWithUsedObjects* process = [[usedObjectFilter filteredFiles] objectAtIndex: index];
-  ProcessInfo* processInfo = [[ProcessInfo alloc] initProcessWithUsedObjects: process];
+  ProcessInfo* processInfo = [theFilteredProcesses objectAtIndex: index];
   return processInfo;
 }
 
-- (void) update
+- (void) setFilter:(id<FilterProtocol>) filter
 {
+  theFilter = filter;
+  [self updateIndexs];
   [delegate update];
+}
+
+// private interface
+
+- (void) updateIndexs
+{
+  NSMutableArray* filteredProcesses = [[NSMutableArray alloc] init];
+  //
+  for (NSInteger i = 0; i < [theAllProcesses count]; ++i)
+  {
+    ProcessWithUsedObjects* process = [theAllProcesses objectAtIndex: i];
+    ProcessInfo* processInfo = [[ProcessInfo alloc] initProcessWithUsedObjects: process filter: theFilter];
+    if ([processInfo usedObjectInfoCount] || ![theFilter filter: [processInfo name]])
+    {
+      [filteredProcesses addObject: processInfo];
+    }
+  }
+  theFilteredProcesses = filteredProcesses;
 }
 
 // properties
