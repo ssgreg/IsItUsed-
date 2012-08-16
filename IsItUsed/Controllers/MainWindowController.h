@@ -18,12 +18,6 @@
 //
 
 @interface MainWindowController : NSWindowController
-{
-@private
-  IBOutlet UsedObjectTableViewController* usedObjectTableViewController;
-  IBOutlet NSSearchField* searchField;
-  IsItUsedModel* appModel;
-}
 
 // interface
 

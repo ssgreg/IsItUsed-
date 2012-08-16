@@ -17,13 +17,9 @@
 // AppDelegate
 //
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-{
-@private
-  IsItUsedModel* appModel;
-  MainWindowController* mainWindowController;
-}
 
 // actions
+
 - (IBAction) OnFind:(id)sender;
 
 @end

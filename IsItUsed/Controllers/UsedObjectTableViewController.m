@@ -15,6 +15,10 @@
 //
 
 @implementation UsedObjectImageTextCell
+{
+@private
+  NSImageCell *theImageCell;
+}
 
 - (id) copyWithZone:(NSZone*) zone
 {
@@ -134,6 +138,13 @@
 //
 
 @implementation UsedObjectTableViewController
+{
+@private
+  IBOutlet NSOutlineView *theOutlineView;
+  IBOutlet UsedObjectCell *theUsedObjectCell;
+  UsedObjectListModel *theModel;
+  NSMutableArray *theBuffer;
+}
 
 // interface
 

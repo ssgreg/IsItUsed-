@@ -17,10 +17,6 @@
 //
 
 @interface UsedObjectImageTextCell : NSTextFieldCell
-{
-@private
-  NSImageCell* theImageCell;
-}
 
 // interface
 
@@ -43,13 +39,6 @@
 //
 
 @interface UsedObjectTableViewController : NSObject<NSOutlineViewDataSource, NSOutlineViewDelegate, SimpleUpdateProtocol>
-{
-@private
-  IBOutlet NSOutlineView* theOutlineView;
-  IBOutlet UsedObjectCell* theUsedObjectCell;
-  UsedObjectListModel* theModel;
-  NSMutableArray* theBuffer;
-}
 
 // interface
 

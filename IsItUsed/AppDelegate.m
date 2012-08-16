@@ -14,6 +14,11 @@
 //
 
 @implementation AppDelegate
+{
+@private
+  IsItUsedModel *appModel;
+  MainWindowController *mainWindowController;
+}
 
 - (id) init
 {
