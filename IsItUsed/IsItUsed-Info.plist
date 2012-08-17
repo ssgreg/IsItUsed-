@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>app_icon</string>
 	<key>CFBundleIdentifier</key>
-	<string>Giigogy Zubankov s ${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>GZ.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
