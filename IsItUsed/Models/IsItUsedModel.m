@@ -63,6 +63,13 @@
 //
 
 @implementation IsItUsedModel
+{
+@private
+  // data
+  id<FilterProtocol> theFilter;
+  // models
+  UsedObjectListModel* usedObjectListModel;
+}
 
 // interface
 
@@ -82,7 +89,8 @@
 
 - (void) setFilterText:(NSString*) filterText
 {
-  [usedObjectListModel setFilter: [[TextFilter alloc] initWithText: filterText]];
+  theFilter = [[TextFilter alloc] initWithText: filterText];
+  [usedObjectListModel setFilter: theFilter];
 }
 
 @end

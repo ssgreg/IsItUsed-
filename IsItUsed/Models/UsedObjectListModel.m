@@ -162,6 +162,11 @@
   [delegate update];
 }
 
+- (bool) isFilterEmpty
+{
+  return theFilter == nil || [theFilter isEmpty];
+}
+
 // private interface
 
 - (void) updateIndexs

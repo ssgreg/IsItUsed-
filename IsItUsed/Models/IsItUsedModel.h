@@ -7,7 +7,6 @@
 //
 
 // IsItUsed
-#import "Data/UsedFileFilter.h"
 #import "Models/UsedObjectListModel.h"
 // Foundation
 #import <Foundation/Foundation.h>
@@ -17,17 +16,13 @@
 // IsItUsedModel
 //
 @interface IsItUsedModel : NSObject
-{
-@private
-  // data
-  UsedFileFilter* usedFileFilter;
-  // models
-  UsedObjectListModel* usedObjectListModel;
-}
 
 // interface
 
+// models
 - (UsedObjectListModel*) usedObjectListModel;
+
+// manipulators
 - (void) setFilterText:(NSString*) filterText;
 
 @end

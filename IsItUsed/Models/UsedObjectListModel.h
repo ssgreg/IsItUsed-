@@ -7,7 +7,6 @@
 //
 
 // IsItUsed
-#import "Data/UsedFileFilter.h"
 #import "Core/UsedObject.h"
 #import "Core/ProcessWithUsedObjects.h"
 // Foundation
@@ -77,10 +76,9 @@
 
 // interface
 
-- (id) initProcessWithUsedObjects:(ProcessWithUsedObjects*) processWithUsedObjects;
+- (id) initProcessWithUsedObjects:(ProcessWithUsedObjects*) processWithUsedObjects filter:(id<FilterProtocol>) filter;
 - (NSInteger) usedObjectInfoCount;
 - (UsedObjectInfo*) usedObjectAtIndex:(NSInteger) index;
-- (void) setFilter:(id<FilterProtocol>) filter;
 
 - (NSString*) name;
 - (NSImage*) icon;
@@ -100,6 +98,7 @@
 - (NSInteger) processInfoCount;
 - (ProcessInfo*) processInfoAtIndex:(NSInteger) index;
 - (void) setFilter:(id<FilterProtocol>) filter;
+- (bool) isFilterEmpty;
 
 // properties
 

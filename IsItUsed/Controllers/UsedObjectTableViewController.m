@@ -250,7 +250,11 @@
 {
   [theBuffer removeAllObjects];
   [theOutlineView reloadData];
-  [theOutlineView expandItem:nil expandChildren:YES];
+  // expand all items if filter no empty
+  if (![theModel isFilterEmpty])
+  {
+    [theOutlineView expandItem:nil expandChildren:YES];
+  }
 }
 
 @end
