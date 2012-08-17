@@ -217,7 +217,19 @@
       customCell.image = [item icon];
       if (customCell.image == nil)
       {
-        customCell.image = [NSImage imageNamed: @"NSApplicationIcon"];
+//        NSBundle *mainBundle = [ NSBundle mainBundle ];
+//        
+//        NSString *bundlePath = [ mainBundle bundlePath ];
+//        
+//        NSString* result = bundlePath;
+//        
+//        result = [result stringByAppendingString: @"/Contents/Resources/Terminal.icns"];
+//        
+//        
+//        
+//        NSImage* image = [[NSWorkspace sharedWorkspace] iconForFile: result];
+        
+        customCell.image = [NSImage imageNamed: @"NSMultipleDocuments"];
       }
     }
     else if ([item isKindOfClass: [UsedObjectInfo class]])

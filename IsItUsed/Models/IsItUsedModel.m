@@ -93,4 +93,9 @@
   [usedObjectListModel setFilter: theFilter];
 }
 
+- (NSInteger) processCount
+{
+  return [usedObjectListModel processInfoCount];
+}
+
 @end

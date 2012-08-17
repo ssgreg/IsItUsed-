@@ -23,7 +23,9 @@
 		EE312B8D15D0034A00490C66 /* UsedObjectListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE312B8C15D0034A00490C66 /* UsedObjectListModel.m */; };
 		EE312B9415D0D0EA00490C66 /* UsedObjectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE312B9315D0D0EA00490C66 /* UsedObjectTableViewController.m */; };
 		EE312B9715D0E09000490C66 /* IsItUsedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE312B9615D0E09000490C66 /* IsItUsedModel.m */; };
-		EEC20D7415DA62E0005902A6 /* command_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EEC20D7315DA62E0005902A6 /* command_icon.icns */; };
+		EE53D25515DE1101003486C2 /* StatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EE53D25415DE1101003486C2 /* StatusBar.m */; };
+		EE53D25F15DE1A95003486C2 /* app_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EE53D25E15DE1A95003486C2 /* app_icon.icns */; };
+		EE53D26915DE1CDB003486C2 /* Terminal.icns in Resources */ = {isa = PBXBuildFile; fileRef = EE53D26815DE1CDB003486C2 /* Terminal.icns */; };
 		EEEEF6E415C6A4FB009D13FB /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEEF6E315C6A4FB009D13FB /* MainWindowController.m */; };
 		EEEEF6E715C6A7EA009D13FB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEEEF6E615C6A7EA009D13FB /* MainWindow.xib */; };
 /* End PBXBuildFile section */
@@ -70,7 +72,10 @@
 		EE312B9315D0D0EA00490C66 /* UsedObjectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsedObjectTableViewController.m; path = Controllers/UsedObjectTableViewController.m; sourceTree = "<group>"; };
 		EE312B9515D0E09000490C66 /* IsItUsedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IsItUsedModel.h; path = Models/IsItUsedModel.h; sourceTree = "<group>"; };
 		EE312B9615D0E09000490C66 /* IsItUsedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IsItUsedModel.m; path = Models/IsItUsedModel.m; sourceTree = "<group>"; };
-		EEC20D7315DA62E0005902A6 /* command_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = command_icon.icns; path = IsItUsed/Resources/command_icon.icns; sourceTree = "<group>"; };
+		EE53D25315DE1101003486C2 /* StatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusBar.h; path = Controls/StatusBar.h; sourceTree = "<group>"; };
+		EE53D25415DE1101003486C2 /* StatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusBar.m; path = Controls/StatusBar.m; sourceTree = "<group>"; };
+		EE53D25E15DE1A95003486C2 /* app_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = app_icon.icns; sourceTree = "<group>"; };
+		EE53D26815DE1CDB003486C2 /* Terminal.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Terminal.icns; path = IsItUsed/Resources/Terminal.icns; sourceTree = "<group>"; };
 		EEEEF6E215C6A4FB009D13FB /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainWindowController.h; path = Controllers/MainWindowController.h; sourceTree = "<group>"; };
 		EEEEF6E315C6A4FB009D13FB /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainWindowController.m; path = Controllers/MainWindowController.m; sourceTree = "<group>"; };
 		EEEEF6E615C6A7EA009D13FB /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 		EE18BC3915BFF3A5003EC499 = {
 			isa = PBXGroup;
 			children = (
+				EE53D25E15DE1A95003486C2 /* app_icon.icns */,
 				EEC20D7115DA6268005902A6 /* Resources */,
 				EE18BC4E15BFF3A5003EC499 /* IsItUsed */,
 				EE18BC6B15BFF3A5003EC499 /* IsItUsedTests */,
@@ -140,6 +146,7 @@
 		EE18BC4E15BFF3A5003EC499 /* IsItUsed */ = {
 			isa = PBXGroup;
 			children = (
+				EE53D25215DE1078003486C2 /* Controls */,
 				EE312B8E15D0035B00490C66 /* Models */,
 				EE18BCA515C2420C003EC499 /* Core */,
 				EE18BC8515C0219E003EC499 /* Controllers */,
@@ -226,11 +233,20 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		EE53D25215DE1078003486C2 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				EE53D25315DE1101003486C2 /* StatusBar.h */,
+				EE53D25415DE1101003486C2 /* StatusBar.m */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
 		EEC20D7115DA6268005902A6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EE53D26815DE1CDB003486C2 /* Terminal.icns */,
 				EE312B8A15C8F33200490C66 /* XIB */,
-				EEC20D7315DA62E0005902A6 /* command_icon.icns */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -310,7 +326,8 @@
 				EE18BC5915BFF3A5003EC499 /* Credits.rtf in Resources */,
 				EE18BC5F15BFF3A5003EC499 /* MainMenu.xib in Resources */,
 				EEEEF6E715C6A7EA009D13FB /* MainWindow.xib in Resources */,
-				EEC20D7415DA62E0005902A6 /* command_icon.icns in Resources */,
+				EE53D25F15DE1A95003486C2 /* app_icon.icns in Resources */,
+				EE53D26915DE1CDB003486C2 /* Terminal.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +371,7 @@
 				EE312B8D15D0034A00490C66 /* UsedObjectListModel.m in Sources */,
 				EE312B9415D0D0EA00490C66 /* UsedObjectTableViewController.m in Sources */,
 				EE312B9715D0E09000490C66 /* IsItUsedModel.m in Sources */,
+				EE53D25515DE1101003486C2 /* StatusBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +483,7 @@
 		EE18BC7715BFF3A5003EC499 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IsItUsed/IsItUsed-Prefix.pch";
 				INFOPLIST_FILE = "IsItUsed/IsItUsed-Info.plist";
@@ -477,6 +496,7 @@
 		EE18BC7815BFF3A5003EC499 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IsItUsed/IsItUsed-Prefix.pch";
 				INFOPLIST_FILE = "IsItUsed/IsItUsed-Info.plist";

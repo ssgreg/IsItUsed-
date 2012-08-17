@@ -25,4 +25,7 @@
 // manipulators
 - (void) setFilterText:(NSString*) filterText;
 
+// info
+- (NSInteger) processCount;
+
 @end
