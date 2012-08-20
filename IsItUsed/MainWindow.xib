@@ -96,9 +96,10 @@
 							<string key="NSToolbarItemPaletteLabel">Custom View</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSSearchField" key="NSToolbarItemView" id="395139164">
-								<nil key="NSNextResponder"/>
+								<reference key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {300, 22}}</string>
+								<reference key="NSSuperview"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSearchFieldCell" key="NSCell" id="380643081">
@@ -270,7 +271,6 @@
 						<reference ref="868339778"/>
 					</array>
 					<array key="NSToolbarIBDefaultItems">
-						<reference ref="608164646"/>
 						<reference ref="965926245"/>
 						<reference ref="89494479"/>
 					</array>
@@ -447,7 +447,6 @@
 							<string key="NSFrame">{{-1, -2}, {602, 23}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:22</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="458376746">
@@ -473,7 +472,7 @@
 					<reference key="NSNextKeyView" ref="782401732"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
-				<string key="NSMinSize">{400, 332}</string>
+				<string key="NSMinSize">{400, 325}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
