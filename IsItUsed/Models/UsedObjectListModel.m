@@ -97,6 +97,11 @@
   return [theProcess appIcon];
 }
 
+- (bool) isApplication
+{
+  return [theProcess appName] != nil;
+}
+
 // private
 
 - (void) updateIndexes:(id<FilterProtocol>) filter
@@ -120,6 +125,35 @@
 
 
 //
+// GroupInfo
+//
+
+@implementation GroupInfo
+{
+@private
+  bool theApplicationFlag;
+}
+
+// interface
+
+- initWithApplicationFlag:(bool) applicationFlag
+{
+  if (self = [super init])
+  {
+    theApplicationFlag = applicationFlag;
+  }
+  return self;
+}
+
+- (bool) isApplicationGroup
+{
+  return theApplicationFlag;
+}
+
+@end
+
+
+//
 // UsedObjectListModel
 //
 
@@ -128,6 +162,7 @@
 @private
   NSArray* theAllProcesses;
   NSArray* theFilteredProcesses;
+  NSArray* theFilteredApplications;
   id<FilterProtocol> theFilter;
   __weak id<SimpleUpdateProtocol> delegate;
 }
@@ -146,13 +181,20 @@
 
 - (NSInteger) processInfoCount
 {
-  return [theFilteredProcesses count];
+  return [theFilteredProcesses count] + [theFilteredApplications count];
 }
 
 - (ProcessInfo*) processInfoAtIndex:(NSInteger) index
 {
-  ProcessInfo* processInfo = [theFilteredProcesses objectAtIndex: index];
-  return processInfo;
+  NSInteger offset = index - [theFilteredApplications count];
+  if (offset < 0)
+  {
+    return [theFilteredApplications objectAtIndex: index];
+  }
+  else
+  {
+    return [theFilteredProcesses objectAtIndex: offset];
+  }
 }
 
 - (void) setFilter:(id<FilterProtocol>) filter
@@ -172,24 +214,41 @@
 - (void) updateIndexs
 {
   NSMutableArray* filteredProcesses = [[NSMutableArray alloc] init];
+  NSMutableArray* filteredApplications = [[NSMutableArray alloc] init];
+  //
+  [filteredApplications addObject: [[GroupInfo alloc] initWithApplicationFlag: true]];
+  [filteredProcesses addObject: [[GroupInfo alloc] initWithApplicationFlag: false]];
   //
   for (NSInteger i = 0; i < [theAllProcesses count]; ++i)
   {
     ProcessWithUsedObjects* process = [theAllProcesses objectAtIndex: i];
     ProcessInfo* processInfo = [[ProcessInfo alloc] initProcessWithUsedObjects: process filter: theFilter];
-    
-    // process has filtered objects
-    if ([processInfo usedObjectInfoCount])
+    //
+    bool isFilteredByProcessName = ![theFilter filter: [processInfo name]];
+    if (isFilteredByProcessName)
     {
-      [filteredProcesses addObject: processInfo];
+      processInfo = [[ProcessInfo alloc] initProcessWithUsedObjects: process filter: nil];
     }
-    // process filtered by name
-    else if (![theFilter filter: [processInfo name]])
+    // process has filtered objects or process is filtered by name
+    if ([processInfo usedObjectInfoCount] || isFilteredByProcessName)
     {
-      [filteredProcesses addObject: processInfo];
+      [processInfo isApplication] == YES
+        ? [filteredApplications addObject: processInfo]
+        : [filteredProcesses addObject: processInfo];
     }
   }
-  theFilteredProcesses = filteredProcesses;
+  
+  id mySort = ^(ProcessInfo* left, ProcessInfo* right)
+  {
+    if ([left isKindOfClass: [GroupInfo class]])
+    {
+      return (NSComparisonResult)NSOrderedAscending;
+    }
+    return [[left name] caseInsensitiveCompare: [right name]];
+  };
+
+  theFilteredProcesses = [filteredProcesses sortedArrayUsingComparator: mySort];
+  theFilteredApplications = [filteredApplications sortedArrayUsingComparator: mySort];
 }
 
 // properties

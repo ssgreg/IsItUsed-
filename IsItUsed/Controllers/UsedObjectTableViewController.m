@@ -209,7 +209,12 @@
   NSString* identifier = [tableColumn identifier];
   if ([identifier isEqualToString: @"applicationName"])
   {
-    if ([item isKindOfClass: [ProcessInfo class]])
+    if ([item isKindOfClass: [GroupInfo class]])
+    {
+      UsedObjectCell* customCell = cell;
+      customCell.stringValue = [item isApplicationGroup] ? @"Applications" : @"Background Processes";
+    }
+    else if ([item isKindOfClass: [ProcessInfo class]])
     {
       UsedObjectImageTextCell* customCell = cell;
       //
@@ -232,7 +237,11 @@
 {
   if (tableColumn != nil)
   {
-    if ([item isKindOfClass: [ProcessInfo class]])
+    if ([item isKindOfClass: [GroupInfo class]])
+    {
+      return theUsedObjectCell;
+    }
+    else if ([item isKindOfClass: [ProcessInfo class]])
     {
       return [tableColumn dataCell];
     }
@@ -244,12 +253,23 @@
   return nil;
 }
 
+- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item
+{
+  if ([item isKindOfClass: [GroupInfo class]])
+  {
+    return YES;
+  }
+  return NO;
+}
+
 // SimpleUpdateDelegate interface
 
 - (void) update
 {
   [theBuffer removeAllObjects];
   [theOutlineView reloadData];
+  [theOutlineView deselectAll: nil];
+  [theOutlineView scrollToBeginningOfDocument: nil];
   // expand all items if filter no empty
   if (![theModel isFilterEmpty])
   {

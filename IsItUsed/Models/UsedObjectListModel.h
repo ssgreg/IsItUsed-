@@ -69,8 +69,22 @@
 
 - (NSString*) name;
 - (NSImage*) icon;
+- (bool) isApplication;
 
 @end		
+
+
+//
+// GroupInfo
+//
+
+@interface GroupInfo : NSObject
+
+// interface
+
+- (bool) isApplicationGroup;
+
+@end
 
 
 //
