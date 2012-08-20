@@ -41,19 +41,6 @@
 
 
 //
-// FilterFacade
-//
-
-@interface FilterFacade : NSObject<FilterProtocol>
-
-// interface
-
-- (id) initWithFilterProtocol:(id<FilterProtocol>) filter;
-
-@end
-
-
-//
 // UsedObjectInfo
 //
 

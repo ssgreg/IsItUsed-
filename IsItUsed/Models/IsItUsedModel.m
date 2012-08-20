@@ -46,7 +46,7 @@
   {
     return false;
   }
-  NSRange range = [object rangeOfString: theText];
+  NSRange range = [object rangeOfString: theText options: NSCaseInsensitiveSearch];
   return range.location == NSNotFound;
 }
 

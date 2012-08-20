@@ -177,7 +177,14 @@
   {
     ProcessWithUsedObjects* process = [theAllProcesses objectAtIndex: i];
     ProcessInfo* processInfo = [[ProcessInfo alloc] initProcessWithUsedObjects: process filter: theFilter];
-    if ([processInfo usedObjectInfoCount] || ![theFilter filter: [processInfo name]])
+    
+    // process has filtered objects
+    if ([processInfo usedObjectInfoCount])
+    {
+      [filteredProcesses addObject: processInfo];
+    }
+    // process filtered by name
+    else if (![theFilter filter: [processInfo name]])
     {
       [filteredProcesses addObject: processInfo];
     }

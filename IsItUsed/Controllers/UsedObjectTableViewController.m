@@ -217,18 +217,6 @@
       customCell.image = [item icon];
       if (customCell.image == nil)
       {
-//        NSBundle *mainBundle = [ NSBundle mainBundle ];
-//        
-//        NSString *bundlePath = [ mainBundle bundlePath ];
-//        
-//        NSString* result = bundlePath;
-//        
-//        result = [result stringByAppendingString: @"/Contents/Resources/Terminal.icns"];
-//        
-//        
-//        
-//        NSImage* image = [[NSWorkspace sharedWorkspace] iconForFile: result];
-        
         customCell.image = [NSImage imageNamed: @"NSMultipleDocuments"];
       }
     }
