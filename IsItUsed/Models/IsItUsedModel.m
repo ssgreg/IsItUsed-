@@ -17,7 +17,7 @@
 @interface TextFilter : NSObject<FilterProtocol>
 
 // inteface
-- (id) initWithText:(NSString*) text;
+- (bool) setText:(NSString*) text;
 
 @end
 
@@ -29,13 +29,21 @@
 
 // inteface
 
-- (id) initWithText:(NSString*) text
+- (bool) setText:(NSString*) text
 {
-  if (self = [super init])
+  if (text == nil && theText == nil)
   {
-    theText = text;
+    return false;
   }
-  return self;
+  if (text != nil && theText != nil)
+  {
+    if ([theText isEqualToString: text])
+    {
+      return false;
+    }
+  }
+  theText = text;
+  return true;
 }
 
 // FilterProtocol interaface
@@ -66,7 +74,7 @@
 {
 @private
   // data
-  id<FilterProtocol> theFilter;
+  TextFilter* theFilter;
   // models
   UsedObjectListModel* usedObjectListModel;
 }
@@ -77,6 +85,7 @@
 {
   if (self = [super init])
   {
+    theFilter = [[TextFilter alloc] init];
     usedObjectListModel = [[UsedObjectListModel alloc] init];
   }
   return self;
@@ -89,8 +98,10 @@
 
 - (void) setFilterText:(NSString*) filterText
 {
-  theFilter = [[TextFilter alloc] initWithText: filterText];
-  [usedObjectListModel setFilter: theFilter];
+  if ([theFilter setText: filterText])
+  {
+    [usedObjectListModel setFilter: theFilter];
+  }
 }
 
 - (NSInteger) processCount
