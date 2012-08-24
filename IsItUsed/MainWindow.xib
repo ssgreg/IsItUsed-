@@ -2,7 +2,7 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12A269</string>
+		<string key="IBDocument.SystemVersion">12B19</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2541</string>
 		<string key="IBDocument.AppKitVersion">1187</string>
 		<string key="IBDocument.HIToolboxVersion">624.00</string>
@@ -50,7 +50,7 @@
 			<object class="NSWindowTemplate" id="1005">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{736, 523}, {600, 400}}</string>
+				<string key="NSWindowRect">{{736, 523}, {600, 395}}</string>
 				<int key="NSWTFlags">544735232</int>
 				<string key="NSWindowTitle">IsItUsed</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -294,7 +294,7 @@
 											<reference key="NSNextResponder" ref="1041212231"/>
 											<int key="NSvFlags">256</int>
 											<array class="NSMutableArray" key="NSSubviews"/>
-											<string key="NSFrameSize">{600, 380}</string>
+											<string key="NSFrameSize">{600, 375}</string>
 											<reference key="NSSuperview" ref="1041212231"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="631871062"/>
@@ -384,7 +384,7 @@
 											<bool key="NSOutlineViewAutoresizesOutlineColumnKey">NO</bool>
 										</object>
 									</array>
-									<string key="NSFrameSize">{600, 380}</string>
+									<string key="NSFrameSize">{600, 375}</string>
 									<reference key="NSSuperview" ref="782401732"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="875412414"/>
@@ -426,7 +426,7 @@
 									<double key="NSPercent">0.99750623441396513</double>
 								</object>
 							</array>
-							<string key="NSFrame">{{0, 21}, {600, 380}}</string>
+							<string key="NSFrame">{{0, 21}, {600, 375}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="1041212231"/>
@@ -447,7 +447,6 @@
 							<string key="NSFrame">{{-1, -2}, {602, 23}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:22</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="458376746">
@@ -467,7 +466,7 @@
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
 					</array>
-					<string key="NSFrameSize">{600, 400}</string>
+					<string key="NSFrameSize">{600, 395}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="782401732"/>
