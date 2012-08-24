@@ -55,6 +55,7 @@
 @implementation ProcessInfo
 {
 @private
+  id<FilterProtocol> theFilter;
   ProcessWithUsedObjects* theProcess;
   NSArray* theFilteredUsedObjects;
 }
@@ -65,8 +66,9 @@
 {
   if (self = [super init])
   {
+    theFilter = filter;
     theProcess = processWithUsedObjects;
-    [self updateIndexes: filter];
+    [self updateIndexes];
 
   }
   return self;
@@ -102,10 +104,45 @@
   return [theProcess appName] != nil;
 }
 
+- (pid_t) pid
+{
+  return [theProcess pid];
+}
+
+- (bool) isFiltered
+{
+  bool isFilteredByProcessName = [theFilter filter: [self name]];
+  if (!isFilteredByProcessName)
+  {
+    return false;
+  }
+  if ([self usedObjectInfoCount] > 0)
+  {
+    return false;
+  }
+  return true;
+}
+
 // private
 
-- (void) updateIndexes:(id<FilterProtocol>) filter
+- (bool) isExcluded:(UsedObjectInfo*) usedObjectInfo
 {
+  NSString* path = [usedObjectInfo path];
+  if ([path isEqualToString: @"/"])
+  {
+    return true;
+  }
+  NSRange range = [path rangeOfString: @"/dev/" options: NSCaseInsensitiveSearch];
+  if (range.location != NSNotFound && range.location == 0)
+  {
+    return true;
+  }
+  return false;
+}
+
+- (void) updateIndexes
+{
+  bool isFilteredByProcessName = [theFilter filter: [self name]];
   NSMutableArray* filteredUsedObjects = [[NSMutableArray alloc] init];
   NSArray* allUsedObjects = [theProcess usedObjects];
   //
@@ -113,9 +150,12 @@
   {
     UsedObject* usedObject = [allUsedObjects objectAtIndex: i];
     UsedObjectInfo* usedObjectInfo = [[UsedObjectInfo alloc] initWithUsedObject: usedObject];
-    if (![filter filter: [usedObjectInfo name]])
+    if (!isFilteredByProcessName || ![theFilter filter: [usedObjectInfo name]])
     {
-      [filteredUsedObjects addObject: usedObjectInfo];
+      if (![self isExcluded: usedObjectInfo])
+      {
+        [filteredUsedObjects addObject: usedObjectInfo];
+      }
     }
   }
   theFilteredUsedObjects = filteredUsedObjects;
@@ -224,13 +264,7 @@
     ProcessWithUsedObjects* process = [theAllProcesses objectAtIndex: i];
     ProcessInfo* processInfo = [[ProcessInfo alloc] initProcessWithUsedObjects: process filter: theFilter];
     //
-    bool isFilteredByProcessName = ![theFilter filter: [processInfo name]];
-    if (isFilteredByProcessName)
-    {
-      processInfo = [[ProcessInfo alloc] initProcessWithUsedObjects: process filter: nil];
-    }
-    // process has filtered objects or process is filtered by name
-    if ([processInfo usedObjectInfoCount] || isFilteredByProcessName)
+    if (![processInfo isFiltered])
     {
       [processInfo isApplication] == YES
         ? [filteredApplications addObject: processInfo]

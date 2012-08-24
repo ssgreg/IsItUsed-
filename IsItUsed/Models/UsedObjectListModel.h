@@ -69,6 +69,7 @@
 
 - (NSString*) name;
 - (NSImage*) icon;
+- (pid_t) pid;
 - (bool) isApplication;
 
 @end		

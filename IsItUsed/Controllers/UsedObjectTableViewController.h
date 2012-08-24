@@ -35,6 +35,14 @@
 
 
 //
+// IITHeaderCell
+//
+
+@interface IITHeaderCell : NSTextFieldCell
+@end
+
+
+//
 // UsedObjectTableViewController
 //
 

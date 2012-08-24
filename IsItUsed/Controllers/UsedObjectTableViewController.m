@@ -134,16 +134,25 @@
 
 
 //
+// IITHeaderCell
+//
+
+@implementation IITHeaderCell
+@end
+
+
+//
 // UsedObjectsTableViewController
 //
 
 @implementation UsedObjectTableViewController
 {
 @private
-  IBOutlet NSOutlineView *theOutlineView;
-  IBOutlet UsedObjectCell *theUsedObjectCell;
-  UsedObjectListModel *theModel;
-  NSMutableArray *theBuffer;
+  IBOutlet NSOutlineView* theOutlineView;
+  IBOutlet UsedObjectCell* theUsedObjectCell;
+  IBOutlet IITHeaderCell* theHeaderCell;
+  UsedObjectListModel* theModel;
+  NSMutableArray* theBuffer;
 }
 
 // interface
@@ -239,7 +248,7 @@
   {
     if ([item isKindOfClass: [GroupInfo class]])
     {
-      return theUsedObjectCell;
+      return theHeaderCell;
     }
     else if ([item isKindOfClass: [ProcessInfo class]])
     {

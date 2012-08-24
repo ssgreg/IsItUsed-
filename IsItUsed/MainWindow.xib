@@ -447,6 +447,7 @@
 							<string key="NSFrame">{{-1, -2}, {602, 23}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:22</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="458376746">
@@ -483,10 +484,10 @@
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 			<object class="NSTextFieldCell" id="453856890">
-				<int key="NSCellFlags">67108928</int>
-				<int key="NSCellFlags2">272762880</int>
+				<int key="NSCellFlags">68157504</int>
+				<int key="NSCellFlags2">272630784</int>
 				<string key="NSContents">Text</string>
-				<reference key="NSSupport" ref="598620075"/>
+				<reference key="NSSupport" ref="26"/>
 				<string key="NSCellIdentifier">_NS:9</string>
 				<reference key="NSBackgroundColor" ref="17220236"/>
 				<object class="NSColor" key="NSTextColor">
@@ -495,6 +496,15 @@
 					<string key="NSColorName">textColor</string>
 					<reference key="NSColor" ref="124156829"/>
 				</object>
+			</object>
+			<object class="NSTextFieldCell" id="632444457">
+				<int key="NSCellFlags">337641537</int>
+				<int key="NSCellFlags2">272631808</int>
+				<string key="NSContents">Text</string>
+				<reference key="NSSupport" ref="598620075"/>
+				<string key="NSCellIdentifier">_NS:9</string>
+				<reference key="NSBackgroundColor" ref="17220236"/>
+				<reference key="NSTextColor" ref="271938816"/>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -562,6 +572,14 @@
 						<reference key="destination" ref="453856890"/>
 					</object>
 					<int key="connectionID">324</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">theHeaderCell</string>
+						<reference key="source" ref="352875639"/>
+						<reference key="destination" ref="632444457"/>
+					</object>
+					<int key="connectionID">617</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -914,6 +932,11 @@
 						<reference key="object" ref="205834629"/>
 						<reference key="parent" ref="1006"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">616</int>
+						<reference key="object" ref="632444457"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -972,15 +995,25 @@
 				<string key="586.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="601.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="602.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="616.CustomClassName">IITHeaderCell</string>
+				<string key="616.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">615</int>
+			<int key="maxID">617</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">IITHeaderCell</string>
+					<string key="superclassName">NSTextFieldCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/IITHeaderCell.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">MainWindowController</string>
 					<string key="superclassName">NSWindowController</string>
