@@ -26,6 +26,10 @@
 		EE53D25515DE1101003486C2 /* StatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EE53D25415DE1101003486C2 /* StatusBar.m */; };
 		EE53D25F15DE1A95003486C2 /* app_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EE53D25E15DE1A95003486C2 /* app_icon.icns */; };
 		EE53D26915DE1CDB003486C2 /* Terminal.icns in Resources */ = {isa = PBXBuildFile; fileRef = EE53D26815DE1CDB003486C2 /* Terminal.icns */; };
+		EE610A3E15E79CBD007BFC4B /* tb_quit_process.png in Resources */ = {isa = PBXBuildFile; fileRef = EE610A3D15E79CBD007BFC4B /* tb_quit_process.png */; };
+		EE66F73315EC80A50069D1F5 /* tb_goto_process.png in Resources */ = {isa = PBXBuildFile; fileRef = EE66F73215EC80A50069D1F5 /* tb_goto_process.png */; };
+		EE66F73715EC84F60069D1F5 /* tb_goto_process@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE66F73515EC84F60069D1F5 /* tb_goto_process@2x.png */; };
+		EE66F73815EC84F60069D1F5 /* tb_quit_process@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE66F73615EC84F60069D1F5 /* tb_quit_process@2x.png */; };
 		EEEEF6E415C6A4FB009D13FB /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEEF6E315C6A4FB009D13FB /* MainWindowController.m */; };
 		EEEEF6E715C6A7EA009D13FB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEEEF6E615C6A7EA009D13FB /* MainWindow.xib */; };
 /* End PBXBuildFile section */
@@ -76,6 +80,10 @@
 		EE53D25415DE1101003486C2 /* StatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusBar.m; path = Controls/StatusBar.m; sourceTree = "<group>"; };
 		EE53D25E15DE1A95003486C2 /* app_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = app_icon.icns; sourceTree = "<group>"; };
 		EE53D26815DE1CDB003486C2 /* Terminal.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Terminal.icns; path = IsItUsed/Resources/Terminal.icns; sourceTree = "<group>"; };
+		EE610A3D15E79CBD007BFC4B /* tb_quit_process.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tb_quit_process.png; path = IsItUsed/Resources/tb_quit_process.png; sourceTree = "<group>"; };
+		EE66F73215EC80A50069D1F5 /* tb_goto_process.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tb_goto_process.png; path = IsItUsed/Resources/tb_goto_process.png; sourceTree = "<group>"; };
+		EE66F73515EC84F60069D1F5 /* tb_goto_process@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tb_goto_process@2x.png"; path = "IsItUsed/Resources/tb_goto_process@2x.png"; sourceTree = "<group>"; };
+		EE66F73615EC84F60069D1F5 /* tb_quit_process@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tb_quit_process@2x.png"; path = "IsItUsed/Resources/tb_quit_process@2x.png"; sourceTree = "<group>"; };
 		EEEEF6E215C6A4FB009D13FB /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainWindowController.h; path = Controllers/MainWindowController.h; sourceTree = "<group>"; };
 		EEEEF6E315C6A4FB009D13FB /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainWindowController.m; path = Controllers/MainWindowController.m; sourceTree = "<group>"; };
 		EEEEF6E615C6A7EA009D13FB /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -242,9 +250,21 @@
 			name = Controls;
 			sourceTree = "<group>";
 		};
+		EE610A4015E79CD0007BFC4B /* tool bar icons */ = {
+			isa = PBXGroup;
+			children = (
+				EE66F73215EC80A50069D1F5 /* tb_goto_process.png */,
+				EE610A3D15E79CBD007BFC4B /* tb_quit_process.png */,
+				EE66F73515EC84F60069D1F5 /* tb_goto_process@2x.png */,
+				EE66F73615EC84F60069D1F5 /* tb_quit_process@2x.png */,
+			);
+			name = "tool bar icons";
+			sourceTree = "<group>";
+		};
 		EEC20D7115DA6268005902A6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EE610A4015E79CD0007BFC4B /* tool bar icons */,
 				EE53D26815DE1CDB003486C2 /* Terminal.icns */,
 				EE312B8A15C8F33200490C66 /* XIB */,
 			);
@@ -328,6 +348,10 @@
 				EEEEF6E715C6A7EA009D13FB /* MainWindow.xib in Resources */,
 				EE53D25F15DE1A95003486C2 /* app_icon.icns in Resources */,
 				EE53D26915DE1CDB003486C2 /* Terminal.icns in Resources */,
+				EE610A3E15E79CBD007BFC4B /* tb_quit_process.png in Resources */,
+				EE66F73315EC80A50069D1F5 /* tb_goto_process.png in Resources */,
+				EE66F73715EC84F60069D1F5 /* tb_goto_process@2x.png in Resources */,
+				EE66F73815EC84F60069D1F5 /* tb_quit_process@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

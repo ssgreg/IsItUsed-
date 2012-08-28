@@ -104,6 +104,17 @@
   }
 }
 
+- (void) activateSelectedProcess
+{
+  [[NSRunningApplication runningApplicationWithProcessIdentifier:9003] activateWithOptions:NSApplicationActivateAllWindows];
+}
+
+- (void) terminateSelectedProcess
+{
+  [[NSRunningApplication runningApplicationWithProcessIdentifier:11877] terminate];
+}
+
+
 - (NSInteger) processCount
 {
   return [usedObjectListModel processInfoCount];

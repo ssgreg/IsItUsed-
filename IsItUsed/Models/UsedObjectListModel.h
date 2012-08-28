@@ -27,6 +27,17 @@
 
 
 //
+// UsedObjectListModelToModelProtocol
+//
+
+@protocol UsedObjectListModelToModelProtocol <NSObject>
+
+
+
+@end
+
+
+//
 // FilterProtocol
 //
 
@@ -101,6 +112,8 @@
 - (ProcessInfo*) processInfoAtIndex:(NSInteger) index;
 - (void) setFilter:(id<FilterProtocol>) filter;
 - (bool) isFilterEmpty;
+
+- (void) setSelectedProcessInfo:(ProcessInfo*) item;
 
 // properties
 

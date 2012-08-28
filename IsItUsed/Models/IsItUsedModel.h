@@ -24,6 +24,8 @@
 
 // manipulators
 - (void) setFilterText:(NSString*) filterText;
+- (void) activateSelectedProcess;
+- (void) terminateSelectedProcess;
 
 // info
 - (NSInteger) processCount;

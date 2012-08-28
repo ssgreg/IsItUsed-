@@ -249,6 +249,11 @@
   return theFilter == nil || [theFilter isEmpty];
 }
 
+- (void) setSelectedProcessInfo:(ProcessInfo*) item
+{
+  
+}
+
 // private interface
 
 - (void) updateIndexs

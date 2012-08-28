@@ -44,7 +44,7 @@
 
 - (IBAction) OnFind:(id)sender
 {
-  return [mainWindowController findRequested: sender];
+  return [mainWindowController findCommandRequested];
 }
 
 @end

@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
 		<string key="IBDocument.SystemVersion">12B19</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2541</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
 		<string key="IBDocument.AppKitVersion">1187</string>
 		<string key="IBDocument.HIToolboxVersion">624.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2541</string>
+			<string key="NS.object.0">2549</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBNSLayoutConstraint</string>
@@ -63,20 +63,20 @@
 					<bool key="NSToolbarShowsBaselineSeparator">YES</bool>
 					<bool key="NSToolbarAllowsUserCustomization">YES</bool>
 					<bool key="NSToolbarAutosavesConfiguration">NO</bool>
-					<int key="NSToolbarDisplayMode">2</int>
+					<int key="NSToolbarDisplayMode">1</int>
 					<int key="NSToolbarSizeMode">1</int>
 					<dictionary class="NSMutableDictionary" key="NSToolbarIBIdentifiedItems">
 						<object class="NSToolbarItem" key="5FDFFB1F-3219-4788-B358-249BB493D452" id="608164646">
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">5FDFFB1F-3219-4788-B358-249BB493D452</characters>
 							</object>
-							<string key="NSToolbarItemLabel">Toolbar Item</string>
-							<string key="NSToolbarItemPaletteLabel">Toolbar Item</string>
+							<string key="NSToolbarItemLabel">Quit Process</string>
+							<string key="NSToolbarItemPaletteLabel">Quit Process</string>
 							<string key="NSToolbarItemToolTip"/>
 							<nil key="NSToolbarItemView"/>
 							<object class="NSCustomResource" key="NSToolbarItemImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">NSStopProgressFreestandingTemplate</string>
+								<string key="NSResourceName">tb_quit_process</string>
 							</object>
 							<nil key="NSToolbarItemTarget"/>
 							<nil key="NSToolbarItemAction"/>
@@ -92,13 +92,15 @@
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">690ECD2C-3BC8-4F80-9B62-535F2DCCED6E</characters>
 							</object>
-							<string key="NSToolbarItemLabel">Custom View</string>
-							<string key="NSToolbarItemPaletteLabel">Custom View</string>
+							<string key="NSToolbarItemLabel">Filter</string>
+							<string key="NSToolbarItemPaletteLabel">Filter</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSSearchField" key="NSToolbarItemView" id="395139164">
-								<nil key="NSNextResponder"/>
+								<reference key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {300, 22}}</string>
+								<reference key="NSSuperview"/>
+								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSearchFieldCell" key="NSCell" id="380643081">
@@ -183,13 +185,13 @@
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">FAA15CA2-E327-4855-A834-4B2CAF0CE628</characters>
 							</object>
-							<string key="NSToolbarItemLabel">Toolbar Item</string>
-							<string key="NSToolbarItemPaletteLabel">Toolbar Item</string>
+							<string key="NSToolbarItemLabel">Go to Process</string>
+							<string key="NSToolbarItemPaletteLabel">Go to Process</string>
 							<string key="NSToolbarItemToolTip"/>
 							<nil key="NSToolbarItemView"/>
 							<object class="NSCustomResource" key="NSToolbarItemImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">NSApplicationIcon</string>
+								<string key="NSResourceName">tb_goto_process</string>
 							</object>
 							<nil key="NSToolbarItemTarget"/>
 							<nil key="NSToolbarItemAction"/>
@@ -262,7 +264,7 @@
 							</object>
 						</object>
 					</dictionary>
-					<array key="NSToolbarIBAllowedItems">
+					<array class="NSMutableArray" key="NSToolbarIBAllowedItems">
 						<reference ref="1064146363"/>
 						<reference ref="965926245"/>
 						<reference ref="89494479"/>
@@ -271,6 +273,7 @@
 					</array>
 					<array key="NSToolbarIBDefaultItems">
 						<reference ref="608164646"/>
+						<reference ref="868339778"/>
 						<reference ref="965926245"/>
 						<reference ref="89494479"/>
 					</array>
@@ -472,7 +475,7 @@
 					<reference key="NSNextKeyView" ref="782401732"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
-				<string key="NSMinSize">{400, 332}</string>
+				<string key="NSMinSize">{400, 348}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -533,14 +536,6 @@
 					<int key="connectionID">55</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">pushMeClicked:</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="608164646"/>
-					</object>
-					<int key="connectionID">56</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">usedObjectTableViewController</string>
 						<reference key="source" ref="1001"/>
@@ -555,6 +550,22 @@
 						<reference key="destination" ref="235709277"/>
 					</object>
 					<int key="connectionID">605</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">GotoProcessClicked:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="868339778"/>
+					</object>
+					<int key="connectionID">618</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">QuitProcessClicked:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="608164646"/>
+					</object>
+					<int key="connectionID">619</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1001,7 +1012,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">617</int>
+			<int key="maxID">619</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1017,22 +1028,41 @@
 					<string key="className">MainWindowController</string>
 					<string key="superclassName">NSWindowController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="findRequested:">id</string>
-						<string key="pushMeClicked:">id</string>
+						<string key="GotoProcessClicked:">id</string>
+						<string key="QuitProcessClicked:">id</string>
 						<string key="searchTextChanged:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="findRequested:">
-							<string key="name">findRequested:</string>
+						<object class="IBActionInfo" key="GotoProcessClicked:">
+							<string key="name">GotoProcessClicked:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="pushMeClicked:">
-							<string key="name">pushMeClicked:</string>
+						<object class="IBActionInfo" key="QuitProcessClicked:">
+							<string key="name">QuitProcessClicked:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="searchTextChanged:">
 							<string key="name">searchTextChanged:</string>
 							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="searchField">NSSearchField</string>
+						<string key="theStatusBar">StatusBar</string>
+						<string key="usedObjectTableViewController">UsedObjectTableViewController</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="searchField">
+							<string key="name">searchField</string>
+							<string key="candidateClassName">NSSearchField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="theStatusBar">
+							<string key="name">theStatusBar</string>
+							<string key="candidateClassName">StatusBar</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="usedObjectTableViewController">
+							<string key="name">usedObjectTableViewController</string>
+							<string key="candidateClassName">UsedObjectTableViewController</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -1087,10 +1117,10 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NSApplicationIcon">{128, 128}</string>
 			<string key="NSMenuCheckmark">{11, 11}</string>
 			<string key="NSMenuMixedState">{10, 3}</string>
-			<string key="NSStopProgressFreestandingTemplate">{83, 83}</string>
+			<string key="tb_goto_process">{38.404268052454356, 38.404268052454356}</string>
+			<string key="tb_quit_process">{102.40000000000001, 102.40000000000001}</string>
 		</dictionary>
 		<bool key="IBDocument.UseAutolayout">YES</bool>
 	</data>

@@ -22,11 +22,12 @@
 // interface
 
 - (void) setModel:(IsItUsedModel*) model;
+- (void) findCommandRequested;
 
 // actions
 
-- (IBAction) pushMeClicked:(id)sender;
+- (IBAction) QuitProcessClicked:(id)sender;
+- (IBAction) GotoProcessClicked:(id)sender;
 - (IBAction) searchTextChanged:(id) sender;
-- (IBAction) findRequested:(id)sender;
 
 @end

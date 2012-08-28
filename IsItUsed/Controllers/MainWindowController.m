@@ -50,8 +50,14 @@
 
 // actions
 
-- (IBAction) pushMeClicked:(id)sender
+- (IBAction) QuitProcessClicked:(id) sender
 {
+  [appModel terminateSelectedProcess];
+}
+
+- (IBAction) GotoProcessClicked:(id) sender
+{
+  [appModel activateSelectedProcess];
 }
 
 - (IBAction) searchTextChanged:(id) sender
@@ -60,7 +66,7 @@
   [self updateStatusBar];
 }
 
-- (IBAction) findRequested:(id)sender
+- (void) findCommandRequested
 {
   [self makeSearchFieldFirstResponder];
 }
