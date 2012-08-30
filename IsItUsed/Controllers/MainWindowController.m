@@ -6,7 +6,9 @@
 //  Copyright (c) 2012 Grigory Zubankov. All rights reserved.
 //
 
+// IsItUsed
 #import "MainWindowController.h"
+#import "IUQuitProcessAlertWindowController.h"
 #import "Controls/StatusBar.h"
 
 
@@ -21,6 +23,7 @@
   IBOutlet NSSearchField* searchField;
   IBOutlet StatusBar* theStatusBar;
   IsItUsedModel *appModel;
+  IUQuitProcessAlertWindowController* quitProcessAlertWindowController;
 }
 
 // interface
@@ -32,6 +35,7 @@
     // force creation of all IB outlets (used in setModel)
     [self window];
     [self makeSearchFieldFirstResponder];
+    quitProcessAlertWindowController = [[IUQuitProcessAlertWindowController alloc] init];
   }
   return self;
 }
@@ -52,7 +56,8 @@
 
 - (IBAction) QuitProcessClicked:(id) sender
 {
-  [appModel terminateSelectedProcess];
+  [NSApp beginSheet: quitProcessAlertWindowController.window modalForWindow: [self window] modalDelegate: self didEndSelector: nil contextInfo: nil];
+ // [appModel terminateSelectedProcess];
 }
 
 - (IBAction) GotoProcessClicked:(id) sender

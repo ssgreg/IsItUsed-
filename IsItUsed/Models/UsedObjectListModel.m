@@ -254,6 +254,12 @@
   
 }
 
+- (ProcessInfo*) getSelectedProcessInfo
+{
+  return nil;
+}
+
+
 // private interface
 
 - (void) updateIndexs

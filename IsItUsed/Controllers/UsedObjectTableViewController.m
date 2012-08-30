@@ -168,6 +168,26 @@
   [self update];
 }
 
+// actions
+
+- (IBAction) selectedItemChanged:(id) sender
+{
+  id item = [theOutlineView itemAtRow: [theOutlineView selectedRow]];
+  if (item == nil)
+  {
+    [theModel setSelectedProcessInfo: nil];
+  }
+  else if ([item isKindOfClass: [ProcessInfo class]])
+  {
+    [theModel setSelectedProcessInfo: item];
+  }
+  else
+  {
+    id parent = [theOutlineView parentForItem: item];
+    [theModel setSelectedProcessInfo: parent];
+  }
+}
+
 // NSOutlineViewDataSource interface
 
 - (NSInteger) outlineView:(NSOutlineView*) outlineView numberOfChildrenOfItem:(id) item

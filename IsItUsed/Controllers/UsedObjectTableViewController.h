@@ -52,4 +52,8 @@
 
 - (void) setModel:(UsedObjectListModel*) model;
 
+// actions
+
+- (IBAction) selectedItemChanged:(id) sender;
+
 @end

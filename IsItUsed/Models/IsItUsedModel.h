@@ -29,5 +29,6 @@
 
 // info
 - (NSInteger) processCount;
+- (ProcessInfo*) getSelectedProcessInfo;
 
 @end

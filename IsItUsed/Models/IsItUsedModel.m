@@ -120,4 +120,9 @@
   return [usedObjectListModel processInfoCount];
 }
 
+- (ProcessInfo*) getSelectedProcessInfo
+{
+  return [usedObjectListModel getSelectedProcessInfo];
+}
+
 @end

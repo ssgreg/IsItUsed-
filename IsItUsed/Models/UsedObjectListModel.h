@@ -114,6 +114,7 @@
 - (bool) isFilterEmpty;
 
 - (void) setSelectedProcessInfo:(ProcessInfo*) item;
+- (ProcessInfo*) getSelectedProcessInfo;
 
 // properties
 
