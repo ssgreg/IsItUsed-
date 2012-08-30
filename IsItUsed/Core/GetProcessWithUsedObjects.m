@@ -20,46 +20,47 @@
 // MakeUsedObjectsForProcess
 //
 
-NSMutableArray* MakeUsedObjectsForProcess(pid_t pid, int maxFileDescriptors)
+NSMutableArray* MakeUsedObjectsForProcess(pid_t pid, int fdiMaxCount)
 {
-  int fileDescriptorInfoMemorySize = 0;
-  int maxfileDescriptorInfoMemorySize = sizeof(struct proc_fdinfo) * maxFileDescriptors;
+  int fdiSize = 0;
+  int fdiMaxSize = sizeof(struct proc_fdinfo) * fdiMaxCount;
 
   // get file descriptors
-  struct proc_fdinfo* fileDescriptorInfo = (struct proc_fdinfo*)malloc(maxfileDescriptorInfoMemorySize);
-  if ((fileDescriptorInfoMemorySize = proc_pidinfo(pid, PROC_PIDLISTFDS, 0, fileDescriptorInfo, maxfileDescriptorInfoMemorySize)) < 0)
+  struct proc_fdinfo* fdis = (struct proc_fdinfo*)malloc(fdiMaxSize);
+  if ((fdiSize = proc_pidinfo(pid, PROC_PIDLISTFDS, 0, fdis, fdiMaxSize)) <= 0)
   {
-    free(fileDescriptorInfo);
+    free(fdis);
     return 0;
   }
   
   // calculate file descriptor count
-  int fileDescriptorInfoCount = fileDescriptorInfoMemorySize / sizeof(struct proc_fdinfo);
+  int fdiCount = fdiSize / sizeof(struct proc_fdinfo);
   
   // enumerator all file descriptors
   NSMutableArray* objects = [[NSMutableArray alloc] init];
-  for (int i = 0; i < fileDescriptorInfoCount; ++i)
+  for (int i = 0; i < fdiCount; ++i)
   {
     // ignore all not vnode descriptors
-    if (fileDescriptorInfo[i].proc_fdtype != PROX_FDTYPE_VNODE)
+    if (fdis[i].proc_fdtype != PROX_FDTYPE_VNODE)
     {
       continue;
     }
 
     // get file descriptor path
-    struct vnode_fdinfowithpath fileDescriptorInfoWithPath;
-    int result = proc_pidfdinfo(pid, fileDescriptorInfo[i].proc_fd, PROC_PIDFDVNODEPATHINFO, &fileDescriptorInfoWithPath, sizeof(struct vnode_fdinfowithpath));
+    struct vnode_fdinfowithpath fdiwp;
+    int result = proc_pidfdinfo(pid, fdis[i].proc_fd, PROC_PIDFDVNODEPATHINFO, &fdiwp, sizeof(struct vnode_fdinfowithpath));
     if (result < sizeof(sizeof(struct vnode_fdinfowithpath)))
     {
       continue;
     }
 
-    // make UsedObject
-    UsedObject *object = [[UsedObject alloc] initWithPath: [NSString stringWithCString: fileDescriptorInfoWithPath.pvip.vip_path encoding:NSUTF8StringEncoding]];
+    // make and push UsedObject
+    UsedObject *object = [[UsedObject alloc]
+      initWithPath: [NSString stringWithCString: fdiwp.pvip.vip_path encoding:NSUTF8StringEncoding]];
     [objects addObject: object];
   }
   
-  free(fileDescriptorInfo);
+  free(fdis);
   return objects;
 }
 
@@ -71,27 +72,27 @@ NSMutableArray* MakeUsedObjectsForProcess(pid_t pid, int maxFileDescriptors)
 ProcessWithUsedObjects* MakeProcessWithUsedObjects(pid_t pid)
 {
   // get task info (name and max file descriptors count)
-  struct proc_taskallinfo taskInfo;
-  if (proc_pidinfo(pid, PROC_PIDTASKALLINFO, 0, &taskInfo, sizeof(taskInfo)) < 0)
+  struct proc_taskallinfo tai;
+  if (proc_pidinfo(pid, PROC_PIDTASKALLINFO, 0, &tai, sizeof(tai)) < sizeof(tai))
   {
     return 0;
   }
     
   // get process info (module path)
   struct proc_vnodepathinfo vpi;
-  if (proc_pidinfo(pid, PROC_PIDVNODEPATHINFO, 0, &vpi, sizeof(vpi)) < 0)
+  if (proc_pidinfo(pid, PROC_PIDVNODEPATHINFO, 0, &vpi, sizeof(vpi)) < sizeof(vpi))
   {
     return 0;
   }
   
-  NSMutableArray* usedObjects = MakeUsedObjectsForProcess(pid, taskInfo.pbsd.pbi_nfiles);
-  if (!usedObjects || usedObjects.count == 0)
+  NSMutableArray* usedObjects = MakeUsedObjectsForProcess(pid, tai.pbsd.pbi_nfiles);
+  if (!usedObjects)
   {
     return 0;
   }
   
   return [[ProcessWithUsedObjects alloc]
-    initWithName: [NSString stringWithCString:taskInfo.pbsd.pbi_comm encoding:NSUTF8StringEncoding]
+    initWithName: [NSString stringWithCString: tai.pbsd.pbi_comm encoding: NSUTF8StringEncoding]
     pid: pid
     usedObjects: usedObjects];
 }
@@ -103,32 +104,52 @@ ProcessWithUsedObjects* MakeProcessWithUsedObjects(pid_t pid)
 
 NSMutableArray* GetProcessWithUsedObjects()
 {
-  // get process quantity
-  int processQuantity = 0;
-  if ((processQuantity = proc_listpids(PROC_ALL_PIDS, 0, NULL, 0)) <= 0)
+  int const sizeStepIncrement = sizeof(pid_t) * 32;
+  
+  // determine how many bytes are needed to contain pid list
+  int requiredSize = 0;
+  if ((requiredSize = proc_listpids(PROC_ALL_PIDS, 0, nil, 0)) <= 0)
   {
     return 0;
   }
+ 
+  // fix memory size (multiple of sizeIncrement)
+  int pidListSize = (requiredSize + sizeStepIncrement - 1) / sizeStepIncrement * sizeStepIncrement;
+
+  // allocate memory for all pids in the list
+  pid_t* pids = (int*)malloc(pidListSize);
+
+  // number of pids
+  int pidCount = 0;
   
-  // get pids for all processes
-  pid_t* pids = (int*)malloc(processQuantity * sizeof(pid_t));
-  if (proc_listpids(PROC_ALL_PIDS, 0, pids, processQuantity) <= 0)
+  // try to get all pids at _once_
+  for (;;)
   {
-    free(pids);
-    return 0;
+    if ((requiredSize = proc_listpids(PROC_ALL_PIDS, 0, pids, pidListSize)) <= 0)
+    {
+      free(pids);
+      return 0;
+    }
+    
+    if (requiredSize + sizeof(pid_t) < pidListSize)
+    {
+      // buffer should be bigger at least by one pid
+      pidCount = requiredSize / sizeof(pid_t);
+      break;
+    }
+    else
+    {
+      // reallocate bigger buffer
+      pidListSize += sizeStepIncrement;
+      pids = (int*)realloc(pids, pidListSize);
+    }
   }
 
   // enumerate all pids
   NSMutableArray* processes = [[NSMutableArray alloc] init];
-  for (int i = 0; i < processQuantity; ++i)
+  for (int i = 0; i < pidCount; ++i)
   {
-    pid_t pid = pids[i];
-    if (!pid)
-    {
-      continue;
-    }
-    
-    ProcessWithUsedObjects* object = MakeProcessWithUsedObjects(pid);
+    ProcessWithUsedObjects* object = MakeProcessWithUsedObjects(pids[i]);
     if (object)
     {
       // make another object
