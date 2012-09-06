@@ -20,6 +20,7 @@
 		EE18BCA815C24456003EC499 /* UsedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BCA715C24456003EC499 /* UsedObject.m */; };
 		EE18BCAB15C24A6E003EC499 /* ProcessWithUsedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BCAA15C24A6E003EC499 /* ProcessWithUsedObjects.m */; };
 		EE18BCB115C25B34003EC499 /* GetProcessWithUsedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = EE18BCB015C25B34003EC499 /* GetProcessWithUsedObjects.m */; };
+		EE27837415F32AA1007A6975 /* ExecutableBinaryIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EE27837315F32AA1007A6975 /* ExecutableBinaryIcon.icns */; };
 		EE312B8D15D0034A00490C66 /* UsedObjectListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE312B8C15D0034A00490C66 /* UsedObjectListModel.m */; };
 		EE312B9415D0D0EA00490C66 /* UsedObjectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE312B9315D0D0EA00490C66 /* UsedObjectTableViewController.m */; };
 		EE312B9715D0E09000490C66 /* IsItUsedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE312B9615D0E09000490C66 /* IsItUsedModel.m */; };
@@ -32,6 +33,7 @@
 		EE66F73815EC84F60069D1F5 /* tb_quit_process@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE66F73615EC84F60069D1F5 /* tb_quit_process@2x.png */; };
 		EEA40E7F15EE2C840053E8EC /* QuitProcessAlertWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA40E7E15EE2C840053E8EC /* QuitProcessAlertWindow.xib */; };
 		EEA40E8315EE2FA20053E8EC /* IUQuitProcessAlertWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA40E8215EE2FA20053E8EC /* IUQuitProcessAlertWindowController.m */; };
+		EEB07D8615F0852500D273F6 /* libRunningProcessesInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB07D8215F083AB00D273F6 /* libRunningProcessesInfo.a */; };
 		EEEEF6E415C6A4FB009D13FB /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEEEF6E315C6A4FB009D13FB /* MainWindowController.m */; };
 		EEEEF6E715C6A7EA009D13FB /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEEEF6E615C6A7EA009D13FB /* MainWindow.xib */; };
 /* End PBXBuildFile section */
@@ -43,6 +45,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = EE18BC4315BFF3A5003EC499;
 			remoteInfo = IsItUsed;
+		};
+		EEB07D8115F083AB00D273F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEB07D7C15F083AA00D273F6 /* RunningProcessesInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEB07D5015F083AA00D273F6;
+			remoteInfo = RunningProcessesInfo;
+		};
+		EEB07D8315F083AB00D273F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEB07D7C15F083AA00D273F6 /* RunningProcessesInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEB07D6415F083AA00D273F6;
+			remoteInfo = RunningProcessesInfoTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -72,6 +88,7 @@
 		EE18BCAA15C24A6E003EC499 /* ProcessWithUsedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProcessWithUsedObjects.m; path = Core/ProcessWithUsedObjects.m; sourceTree = "<group>"; };
 		EE18BCAF15C25B34003EC499 /* GetProcessWithUsedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetProcessWithUsedObjects.h; path = Core/GetProcessWithUsedObjects.h; sourceTree = "<group>"; };
 		EE18BCB015C25B34003EC499 /* GetProcessWithUsedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetProcessWithUsedObjects.m; path = Core/GetProcessWithUsedObjects.m; sourceTree = "<group>"; };
+		EE27837315F32AA1007A6975 /* ExecutableBinaryIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ExecutableBinaryIcon.icns; sourceTree = "<group>"; };
 		EE312B8B15D0034A00490C66 /* UsedObjectListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsedObjectListModel.h; path = Models/UsedObjectListModel.h; sourceTree = "<group>"; };
 		EE312B8C15D0034A00490C66 /* UsedObjectListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsedObjectListModel.m; path = Models/UsedObjectListModel.m; sourceTree = "<group>"; };
 		EE312B9215D0D0EA00490C66 /* UsedObjectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsedObjectTableViewController.h; path = Controllers/UsedObjectTableViewController.h; sourceTree = "<group>"; };
@@ -89,6 +106,7 @@
 		EEA40E7E15EE2C840053E8EC /* QuitProcessAlertWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuitProcessAlertWindow.xib; sourceTree = "<group>"; };
 		EEA40E8115EE2FA20053E8EC /* IUQuitProcessAlertWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IUQuitProcessAlertWindowController.h; path = Controllers/IUQuitProcessAlertWindowController.h; sourceTree = "<group>"; };
 		EEA40E8215EE2FA20053E8EC /* IUQuitProcessAlertWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IUQuitProcessAlertWindowController.m; path = Controllers/IUQuitProcessAlertWindowController.m; sourceTree = "<group>"; };
+		EEB07D7C15F083AA00D273F6 /* RunningProcessesInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RunningProcessesInfo.xcodeproj; path = RunningProcessesInfo/RunningProcessesInfo.xcodeproj; sourceTree = "<group>"; };
 		EEEEF6E215C6A4FB009D13FB /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainWindowController.h; path = Controllers/MainWindowController.h; sourceTree = "<group>"; };
 		EEEEF6E315C6A4FB009D13FB /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainWindowController.m; path = Controllers/MainWindowController.m; sourceTree = "<group>"; };
 		EEEEF6E615C6A7EA009D13FB /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -99,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEB07D8615F0852500D273F6 /* libRunningProcessesInfo.a in Frameworks */,
 				EE18BC4915BFF3A5003EC499 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +137,7 @@
 		EE18BC3915BFF3A5003EC499 = {
 			isa = PBXGroup;
 			children = (
+				EEB07D7C15F083AA00D273F6 /* RunningProcessesInfo.xcodeproj */,
 				EE53D25E15DE1A95003486C2 /* app_icon.icns */,
 				EEC20D7115DA6268005902A6 /* Resources */,
 				EE18BC4E15BFF3A5003EC499 /* IsItUsed */,
@@ -269,9 +289,19 @@
 			name = "tool bar icons";
 			sourceTree = "<group>";
 		};
+		EEB07D7D15F083AA00D273F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEB07D8215F083AB00D273F6 /* libRunningProcessesInfo.a */,
+				EEB07D8415F083AB00D273F6 /* RunningProcessesInfoTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		EEC20D7115DA6268005902A6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EE27837315F32AA1007A6975 /* ExecutableBinaryIcon.icns */,
 				EE610A4015E79CD0007BFC4B /* tool bar icons */,
 				EE53D26815DE1CDB003486C2 /* Terminal.icns */,
 				EE312B8A15C8F33200490C66 /* XIB */,
@@ -337,6 +367,12 @@
 			mainGroup = EE18BC3915BFF3A5003EC499;
 			productRefGroup = EE18BC4515BFF3A5003EC499 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EEB07D7D15F083AA00D273F6 /* Products */;
+					ProjectRef = EEB07D7C15F083AA00D273F6 /* RunningProcessesInfo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				EE18BC4315BFF3A5003EC499 /* IsItUsed */,
@@ -344,6 +380,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EEB07D8215F083AB00D273F6 /* libRunningProcessesInfo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRunningProcessesInfo.a;
+			remoteRef = EEB07D8115F083AB00D273F6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EEB07D8415F083AB00D273F6 /* RunningProcessesInfoTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RunningProcessesInfoTests.octest;
+			remoteRef = EEB07D8315F083AB00D273F6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EE18BC4215BFF3A5003EC499 /* Resources */ = {
@@ -361,6 +414,7 @@
 				EE66F73715EC84F60069D1F5 /* tb_goto_process@2x.png in Resources */,
 				EE66F73815EC84F60069D1F5 /* tb_quit_process@2x.png in Resources */,
 				EEA40E7F15EE2C840053E8EC /* QuitProcessAlertWindow.xib in Resources */,
+				EE27837415F32AA1007A6975 /* ExecutableBinaryIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +572,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../OCMock 2.0.1/OSX\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IsItUsed/IsItUsed-Prefix.pch";
 				INFOPLIST_FILE = "IsItUsed/IsItUsed-Info.plist";
@@ -532,6 +590,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../OCMock 2.0.1/OSX\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IsItUsed/IsItUsed-Prefix.pch";
 				INFOPLIST_FILE = "IsItUsed/IsItUsed-Info.plist";
@@ -546,7 +608,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IsItUsed.app/Contents/MacOS/IsItUsed";
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../OCMock 2.0.1/OSX\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IsItUsed/IsItUsed-Prefix.pch";
 				INFOPLIST_FILE = "IsItUsedTests/IsItUsedTests-Info.plist";
@@ -560,7 +625,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IsItUsed.app/Contents/MacOS/IsItUsed";
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../OCMock 2.0.1/OSX\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IsItUsed/IsItUsed-Prefix.pch";
 				INFOPLIST_FILE = "IsItUsedTests/IsItUsedTests-Info.plist";
