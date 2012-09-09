@@ -13,7 +13,7 @@
 
 
 #define CALL_PARSER(buffer) \
-  ParseProcessArguments(buffer, sizeof(buffer) - 1)
+  JetParseProcessArguments(buffer, sizeof(buffer) - 1)
 
 // arguments names
 #define TEST_AGR0 "Arg0"
@@ -26,8 +26,6 @@
 
 // other elements
 #define TEST_EXECPATH "ExecPath"
-
-char arg[][5] = {TEST_AGR0, TEST_AGR1, TEST_AGR2, TEST_AGR3, TEST_AGR4, TEST_AGR5, TEST_AGR6};
 
 // incorrect buffers
 char const bufferWithZeroArgCount[] = "\0\0\0\0";
@@ -53,9 +51,9 @@ char const bufferWithArgCount6[] = "\6\0\0\0" TEST_EXECPATH "\0" TEST_AGR0 "\0" 
 {
   char const* invalidNotNullPointer = (char const*)1;
   //
-  STAssertNil(ParseProcessArguments(0, 1), @"nil buffer test");
-  STAssertNil(ParseProcessArguments(invalidNotNullPointer, 0), @"zero size test");
-  STAssertNil(ParseProcessArguments(invalidNotNullPointer, sizeof(int) - 1), @"sizeof(int) - 1 size test");
+  STAssertNil(JetParseProcessArguments(0, 1), @"nil buffer test");
+  STAssertNil(JetParseProcessArguments(invalidNotNullPointer, 0), @"zero size test");
+  STAssertNil(JetParseProcessArguments(invalidNotNullPointer, sizeof(int) - 1), @"sizeof(int) - 1 size test");
 }
 
 - (void) testIncorrectBufferFormat
@@ -72,31 +70,28 @@ char const bufferWithArgCount6[] = "\6\0\0\0" TEST_EXECPATH "\0" TEST_AGR0 "\0" 
 - (void) testSixArgs
 {
   NSArray* array = CALL_PARSER(bufferWithArgCount6);
-  STAssertTrue([[array objectAtIndex: 0] isEqualToString: [self toString: arg[0]]], nil);
-  STAssertTrue([[array objectAtIndex: 1] isEqualToString: [self toString: arg[1]]], nil);
-  STAssertTrue([[array objectAtIndex: 2] isEqualToString: [self toString: arg[2]]], nil);
-  STAssertTrue([[array objectAtIndex: 3] isEqualToString: [self toString: arg[3]]], nil);
-  STAssertTrue([[array objectAtIndex: 4] isEqualToString: [self toString: arg[4]]], nil);
-  STAssertTrue([[array objectAtIndex: 5] isEqualToString: [self toString: arg[5]]], nil);
+
+  STAssertNotNil(array, @"not nil result test");
+  STAssertTrue([array count] == 6, @"arg count test");
+  
+  STAssertTrue([[array objectAtIndex: 0] isEqualToString: [self toString: TEST_AGR0]], nil);
+  STAssertTrue([[array objectAtIndex: 1] isEqualToString: [self toString: TEST_AGR1]], nil);
+  STAssertTrue([[array objectAtIndex: 2] isEqualToString: [self toString: TEST_AGR2]], nil);
+  STAssertTrue([[array objectAtIndex: 3] isEqualToString: [self toString: TEST_AGR3]], nil);
+  STAssertTrue([[array objectAtIndex: 4] isEqualToString: [self toString: TEST_AGR4]], nil);
+  STAssertTrue([[array objectAtIndex: 5] isEqualToString: [self toString: TEST_AGR5]], nil);
 }
 
 - (void) testOneArgs
 {
   NSArray* array = CALL_PARSER(bufferWithArgCount1);
-  STAssertTrue([[array objectAtIndex: 0] isEqualToString: [self toString: arg[0]]], nil);
+ 
+  STAssertNotNil(array, @"not nil result test");
+  STAssertTrue([array count] == 1, @"arg count test");
+
+  STAssertTrue([[array objectAtIndex: 0] isEqualToString: [self toString: TEST_AGR0]], nil);
 }
 
-- (void) testArgCount
-{
-  STAssertTrue([CALL_PARSER(bufferWithArgCount1) count] == 1, nil);
-  STAssertTrue([CALL_PARSER(bufferWithArgCount6) count] == 6, nil);
-}
-
-- (void) testNotNilResult
-{
-  STAssertNotNil(CALL_PARSER(bufferWithArgCount1), nil);
-  STAssertNotNil(CALL_PARSER(bufferWithArgCount6), nil);
-}
 
 // helpers
 
