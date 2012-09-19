@@ -29,18 +29,18 @@ NSArray* JetGetProcessArguments(pid_t pid)
   int mibArgMax[] = { CTL_KERN, KERN_ARGMAX, 0 };
   if (sysctl(mibArgMax, SIZE_OF_MIB(mibArgMax), &bufSize, &bufSizeSize, NULL, 0) < 0)
   {
-		return nil;
-	}
+    return nil;
+  }
   
-  // allocate enough memory for all argments
+  // allocate enough memory for all arguments
   NSMutableData* data = [NSMutableData dataWithLength: bufSize];
-	char* buffer = [data mutableBytes];
+  char* buffer = [data mutableBytes];
   
   // get all arguments to the buffer
   int mibArgs[] = { CTL_KERN, KERN_PROCARGS2, pid, 0 };
-	if (sysctl(mibArgs, SIZE_OF_MIB(mibArgs), buffer, &bufSize, NULL, 0) < 0)
+  if (sysctl(mibArgs, SIZE_OF_MIB(mibArgs), buffer, &bufSize, NULL, 0) < 0)
   {
-		return nil;
+    return nil;
   }
 
   return JetParseProcessArguments(buffer, bufSize);
@@ -77,7 +77,7 @@ NSArray* JetParseProcessArguments(char const* buffer, size_t bufSize)
   // skip trailing '\0' characters
   for (; cp < cpEnd && *cp == '\0'; ++cp)
   {
-	}
+  }
   
   NSMutableArray* args = [[NSMutableArray alloc] init];
   
@@ -96,7 +96,7 @@ NSArray* JetParseProcessArguments(char const* buffer, size_t bufSize)
     }
   }
   
-  // are all argumets parsed?
+  // are all arguments parsed?
   if (arg != argCount)
   {
     return nil;
