@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "GetProcessWithUsedObjects:GetProcessWithUsedObjects.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "pids[0]">
+            </PersistentString>
+            <PersistentString
+               value = "pids[1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[IsItUsedModel filteredListModel]:IsItUsedModel.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ProcessWithUsedObjects name]:ProcessWithUsedObjects.h">
+      </ContextState>
+      <ContextState
+         contextName = "-[UsedFilesTreeViewController numberOfRowsInTableView:]:UsedFilesTreeViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[FilteredListModel count]:FilteredListModel.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[UsedFileFilter filteredFiles]:UsedFileFilter.h">
+      </ContextState>
+      <ContextState
+         contextName = "-[UsedObjectImageTextCell titleFrame:]:UsedObjectTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MainWindowController awakeFromNib]:MainWindowController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MainWindowController setModel:]:MainWindowController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[UsedFilesTreeViewController initWithModel:]:UsedFilesTreeViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[UsedFileFilter setFilter:]:UsedFileFilter.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MainWindowController initWithModel:]:MainWindowController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[UsedObjectTableViewController tableView:objectValueForTableColumn:row:]:UsedObjectTableViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[UsedObjectTableViewController outlineView:child:ofItem:]:UsedObjectTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "theBuffer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[UsedObjectListModel objectAtIndex:]:UsedObjectListModel.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "usedObjectFilter">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[UsedObjectListModel processInfoCount]:UsedObjectListModel.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
