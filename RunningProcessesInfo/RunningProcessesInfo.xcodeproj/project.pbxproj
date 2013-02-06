@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F82E006B19D524E5914955D /* JetStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F82EEAB23710140FF86E735 /* JetStream.h */; };
+		5F82E4A797F00F2CE935E13E /* JetMemoryStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F82E918E8B9C0D5DAADC056 /* JetMemoryStream.h */; };
+		5F82E5A2C0858E65B868A6D9 /* GetProcessIdentifierList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F82E1754B73B0224239B89D /* GetProcessIdentifierList.m */; };
+		5F82E5D179FA2C27E3F8027F /* GetProcessIdentifierList.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F82E88A781A7985BC5702B6 /* GetProcessIdentifierList.h */; };
+		5F82EF613A6A9D64BA90EC26 /* JetMemoryStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F82E6054B0B7727411C1892 /* JetMemoryStream.m */; };
 		EE2783B415F62556007A6975 /* CommandLineParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EE2783B315F62556007A6975 /* CommandLineParser.h */; };
 		EE2783B615F62561007A6975 /* CommandLineParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2783B515F62561007A6975 /* CommandLineParser.m */; };
 		EE2783B915F62A59007A6975 /* CommandListParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2783B815F62A59007A6975 /* CommandListParserTests.m */; };
-		EE2783BC15FC7579007A6975 /* GetProcessIndentifierList.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2783BB15FC7579007A6975 /* GetProcessIndentifierList.m */; };
+		EE2E68C2160090480056044B /* GetProcessIdentifierListTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2E68C1160090480056044B /* GetProcessIdentifierListTest.m */; };
 		EEB07D5415F083AA00D273F6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB07D5315F083AA00D273F6 /* Cocoa.framework */; };
 		EEB07D6615F083AA00D273F6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB07D6515F083AA00D273F6 /* SenTestingKit.framework */; };
 		EEB07D6715F083AA00D273F6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB07D5315F083AA00D273F6 /* Cocoa.framework */; };
@@ -29,12 +34,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F82E1754B73B0224239B89D /* GetProcessIdentifierList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetProcessIdentifierList.m; path = src/GetProcessIdentifierList.m; sourceTree = "<group>"; };
+		5F82E6054B0B7727411C1892 /* JetMemoryStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JetMemoryStream.m; path = src/JetMemoryStream.m; sourceTree = "<group>"; };
+		5F82E88A781A7985BC5702B6 /* GetProcessIdentifierList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetProcessIdentifierList.h; path = include/GetProcessIdentifierList.h; sourceTree = "<group>"; };
+		5F82E918E8B9C0D5DAADC056 /* JetMemoryStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JetMemoryStream.h; path = src/JetMemoryStream.h; sourceTree = "<group>"; };
+		5F82EEAB23710140FF86E735 /* JetStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JetStream.h; path = include/JetStream.h; sourceTree = "<group>"; };
 		EE2783B315F62556007A6975 /* CommandLineParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandLineParser.h; path = include/CommandLineParser.h; sourceTree = "<group>"; };
 		EE2783B515F62561007A6975 /* CommandLineParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommandLineParser.m; path = src/CommandLineParser.m; sourceTree = "<group>"; };
 		EE2783B715F62A59007A6975 /* CommandListParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandListParserTests.h; sourceTree = "<group>"; };
 		EE2783B815F62A59007A6975 /* CommandListParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandListParserTests.m; sourceTree = "<group>"; };
-		EE2783BA15FC7539007A6975 /* GetProcessIndentifierList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetProcessIndentifierList.h; path = include/GetProcessIndentifierList.h; sourceTree = "<group>"; };
-		EE2783BB15FC7579007A6975 /* GetProcessIndentifierList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetProcessIndentifierList.m; path = src/GetProcessIndentifierList.m; sourceTree = "<group>"; };
+		EE2E68C0160090480056044B /* GetProcessIdentifierListTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetProcessIdentifierListTest.h; sourceTree = "<group>"; };
+		EE2E68C1160090480056044B /* GetProcessIdentifierListTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetProcessIdentifierListTest.m; sourceTree = "<group>"; };
 		EEB07D5015F083AA00D273F6 /* libRunningProcessesInfo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRunningProcessesInfo.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB07D5315F083AA00D273F6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EEB07D5615F083AA00D273F6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -72,8 +82,9 @@
 		EE2783B115F60C3E007A6975 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				5F82E88A781A7985BC5702B6 /* GetProcessIdentifierList.h */,
 				EE2783B315F62556007A6975 /* CommandLineParser.h */,
-				EE2783BA15FC7539007A6975 /* GetProcessIndentifierList.h */,
+				5F82EEAB23710140FF86E735 /* JetStream.h */,
 			);
 			name = include;
 			sourceTree = "<group>";
@@ -81,8 +92,10 @@
 		EE2783B215F60C47007A6975 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				5F82E1754B73B0224239B89D /* GetProcessIdentifierList.m */,
 				EE2783B515F62561007A6975 /* CommandLineParser.m */,
-				EE2783BB15FC7579007A6975 /* GetProcessIndentifierList.m */,
+				5F82E6054B0B7727411C1892 /* JetMemoryStream.m */,
+				5F82E918E8B9C0D5DAADC056 /* JetMemoryStream.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -150,6 +163,8 @@
 				EEB07D6C15F083AA00D273F6 /* Supporting Files */,
 				EE2783B715F62A59007A6975 /* CommandListParserTests.h */,
 				EE2783B815F62A59007A6975 /* CommandListParserTests.m */,
+				EE2E68C0160090480056044B /* GetProcessIdentifierListTest.h */,
+				EE2E68C1160090480056044B /* GetProcessIdentifierListTest.m */,
 			);
 			path = RunningProcessesInfoTests;
 			sourceTree = "<group>";
@@ -171,6 +186,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE2783B415F62556007A6975 /* CommandLineParser.h in Headers */,
+				5F82E5D179FA2C27E3F8027F /* GetProcessIdentifierList.h in Headers */,
+				5F82E006B19D524E5914955D /* JetStream.h in Headers */,
+				5F82E4A797F00F2CE935E13E /* JetMemoryStream.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +237,7 @@
 		EEB07D4715F083AA00D273F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Grigory Zubankov";
 			};
 			buildConfigurationList = EEB07D4A15F083AA00D273F6 /* Build configuration list for PBXProject "RunningProcessesInfo" */;
@@ -273,7 +291,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE2783B615F62561007A6975 /* CommandLineParser.m in Sources */,
-				EE2783BC15FC7579007A6975 /* GetProcessIndentifierList.m in Sources */,
+				5F82E5A2C0858E65B868A6D9 /* GetProcessIdentifierList.m in Sources */,
+				5F82EF613A6A9D64BA90EC26 /* JetMemoryStream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE2783B915F62A59007A6975 /* CommandListParserTests.m in Sources */,
+				EE2E68C2160090480056044B /* GetProcessIdentifierListTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +379,7 @@
 		EEB07D7715F083AA00D273F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -371,6 +392,7 @@
 		EEB07D7815F083AA00D273F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

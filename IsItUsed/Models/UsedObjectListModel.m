@@ -91,6 +91,8 @@
   {
     appName = [theProcess name];
   }
+  
+  return [NSString stringWithFormat: @"%@ - %d", appName, [theProcess pid]];
   return appName;
 }
 

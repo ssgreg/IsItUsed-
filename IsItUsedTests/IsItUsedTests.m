@@ -10,23 +10,14 @@
 
 @implementation IsItUsedTests
 
-- (void)setUp
+- (void) testExample
 {
-    [super setUp];
-    
-    // Set-up code here.
+//    STFail(@"Unit tests are not implemented yet in IsItUsedTests");
 }
 
-- (void)tearDown
+- (void) testEverthing
 {
-    // Tear-down code here.
-    
-    [super tearDown];
-}
-
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in IsItUsedTests");
+  
 }
 
 @end

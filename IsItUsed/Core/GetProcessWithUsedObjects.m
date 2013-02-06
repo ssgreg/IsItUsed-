@@ -14,6 +14,7 @@
 #import <Foundation/Foundation.h>
 //
 #include <libproc.h>
+#include <sys/sysctl.h>
 
 
 //
@@ -32,7 +33,9 @@ NSMutableArray* MakeUsedObjectsForProcess(pid_t pid, int fdiMaxCount)
     free(fdis);
     return 0;
   }
-  
+
+  int tmp1 = proc_pidinfo(pid, PROC_PIDLISTFDS, 0, 0, 0);
+
   // calculate file descriptor count
   int fdiCount = fdiSize / sizeof(struct proc_fdinfo);
   
@@ -84,15 +87,29 @@ ProcessWithUsedObjects* MakeProcessWithUsedObjects(pid_t pid)
   {
     return 0;
   }
-  
+
+  char pathBuffer[PROC_PIDPATHINFO_SIZE];
+  if (proc_pidinfo(pid, PROC_PIDPATHINFO, 0, pathBuffer, PROC_PIDPATHINFO_SIZE) < 0)
+  {
+    return 0;
+  }
+
   NSMutableArray* usedObjects = MakeUsedObjectsForProcess(pid, tai.pbsd.pbi_nfiles);
   if (!usedObjects)
   {
     return 0;
   }
   
+  NSString* path = [NSString stringWithCString: pathBuffer encoding: NSUTF8StringEncoding];
+  NSRange range = [path rangeOfCharacterFromSet: [NSCharacterSet characterSetWithCharactersInString: @"/"] options: NSBackwardsSearch];
+  NSString* name = [path substringFromIndex: range.location + 1];
+  
+  NSString* name2 = [NSString stringWithCString: tai.pbsd.pbi_comm encoding: NSUTF8StringEncoding];
+  
+
   return [[ProcessWithUsedObjects alloc]
-    initWithName: [NSString stringWithCString: tai.pbsd.pbi_comm encoding: NSUTF8StringEncoding]
+//    initWithName: [NSString stringWithCString: tai.pbsd.pbi_comm encoding: NSUTF8StringEncoding]
+    initWithName: [NSString stringWithFormat: @"%@[%@]", name, name2]
     pid: pid
     usedObjects: usedObjects];
 }

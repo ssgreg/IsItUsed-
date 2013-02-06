@@ -8,6 +8,8 @@
 
 // RunningProcessInfo
 #import "CommandLineParser.h"
+#import "JetStream.h"
+#import "JetMemoryStream.h"
 // sys
 #include <sys/sysctl.h>
 
@@ -53,55 +55,39 @@ NSArray* JetGetProcessArguments(pid_t pid)
 
 NSArray* JetParseProcessArguments(char const* buffer, size_t bufSize)
 {
-  // check input parameters
-  if (buffer == nil || bufSize < sizeof(int))
-  {
-    return nil;
-  }
-  
-  // get argument count
-  int argCount = *((int*)buffer);
+  JetMemoryStream* stream = [[JetMemoryStream alloc] initWithData: [NSData dataWithBytesNoCopy: buffer length: bufSize freeWhenDone: NO]];
+
+  // read argument count
+  int argCount = [stream readInteger];
   if (argCount < 1)
   {
     return nil;
   }
-  
-  // move pointer to executable path
-  char const* cp = buffer + sizeof(argCount);
-  char const* cpEnd = buffer + bufSize;
-  
+
   // skip executable path
-  for (; cp < cpEnd && *cp != '\0'; ++cp)
-  {
-  }
-  // skip trailing '\0' characters
-  for (; cp < cpEnd && *cp == '\0'; ++cp)
-  {
-  }
-  
-  NSMutableArray* args = [[NSMutableArray alloc] init];
-  
-  // reached arg0 - read all args
-  char const* cpArgN = cp;
-  int arg = 0;
-  for (; cp < cpEnd && arg < argCount; ++cp)
-  {
-    if (*cp == '\0')
-    {
-      ++arg;
-      NSString* argN = [NSString stringWithCString: cpArgN encoding: NSUTF8StringEncoding];
-      [args addObject: argN];
-      // set net cpArgN
-      cpArgN = cp + 1;
-    }
-  }
-  
-  // are all arguments parsed?
-  if (arg != argCount)
+  if (![stream readString])
   {
     return nil;
   }
 
-  // all Ok
+  // read arguments
+  int curArg = 0;
+  NSMutableArray* args = [[NSMutableArray alloc] init];
+  for (; curArg < argCount; ++curArg)
+  {
+    NSString* argN = [stream readString];
+    if (!argN)
+    {
+      return nil;
+    }
+    [args addObject: argN];
+  }
+
+  // are not all arguments parsed? is remaining buffer not empty?
+  if (curArg != argCount || [stream hasData: 1])
+  {
+    return nil;
+  }
+
   return args;
 }
