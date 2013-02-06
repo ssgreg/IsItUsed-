@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5F82E006B19D524E5914955D /* JetStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F82EEAB23710140FF86E735 /* JetStream.h */; };
-		5F82E4A797F00F2CE935E13E /* JetMemoryStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F82E918E8B9C0D5DAADC056 /* JetMemoryStream.h */; };
 		5F82E5A2C0858E65B868A6D9 /* GetProcessIdentifierList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F82E1754B73B0224239B89D /* GetProcessIdentifierList.m */; };
 		5F82E5D179FA2C27E3F8027F /* GetProcessIdentifierList.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F82E88A781A7985BC5702B6 /* GetProcessIdentifierList.h */; };
 		5F82EF613A6A9D64BA90EC26 /* JetMemoryStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F82E6054B0B7727411C1892 /* JetMemoryStream.m */; };
@@ -21,6 +20,7 @@
 		EEB07D6715F083AA00D273F6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB07D5315F083AA00D273F6 /* Cocoa.framework */; };
 		EEB07D6A15F083AA00D273F6 /* libRunningProcessesInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB07D5015F083AA00D273F6 /* libRunningProcessesInfo.a */; };
 		EEB07D7015F083AA00D273F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEB07D6E15F083AA00D273F6 /* InfoPlist.strings */; };
+		EEBBFCB116C270E600585C8B /* JetMemoryStream.h in Headers */ = {isa = PBXBuildFile; fileRef = EEBBFCB016C270E600585C8B /* JetMemoryStream.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 		5F82E1754B73B0224239B89D /* GetProcessIdentifierList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetProcessIdentifierList.m; path = src/GetProcessIdentifierList.m; sourceTree = "<group>"; };
 		5F82E6054B0B7727411C1892 /* JetMemoryStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JetMemoryStream.m; path = src/JetMemoryStream.m; sourceTree = "<group>"; };
 		5F82E88A781A7985BC5702B6 /* GetProcessIdentifierList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetProcessIdentifierList.h; path = include/GetProcessIdentifierList.h; sourceTree = "<group>"; };
-		5F82E918E8B9C0D5DAADC056 /* JetMemoryStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JetMemoryStream.h; path = src/JetMemoryStream.h; sourceTree = "<group>"; };
 		5F82EEAB23710140FF86E735 /* JetStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JetStream.h; path = include/JetStream.h; sourceTree = "<group>"; };
 		EE2783B315F62556007A6975 /* CommandLineParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandLineParser.h; path = include/CommandLineParser.h; sourceTree = "<group>"; };
 		EE2783B515F62561007A6975 /* CommandLineParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommandLineParser.m; path = src/CommandLineParser.m; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		EEB07D6515F083AA00D273F6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		EEB07D6D15F083AA00D273F6 /* RunningProcessesInfoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RunningProcessesInfoTests-Info.plist"; sourceTree = "<group>"; };
 		EEB07D6F15F083AA00D273F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EEBBFCB016C270E600585C8B /* JetMemoryStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JetMemoryStream.h; path = include/JetMemoryStream.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +82,7 @@
 		EE2783B115F60C3E007A6975 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				EEBBFCB016C270E600585C8B /* JetMemoryStream.h */,
 				5F82E88A781A7985BC5702B6 /* GetProcessIdentifierList.h */,
 				EE2783B315F62556007A6975 /* CommandLineParser.h */,
 				5F82EEAB23710140FF86E735 /* JetStream.h */,
@@ -95,7 +96,6 @@
 				5F82E1754B73B0224239B89D /* GetProcessIdentifierList.m */,
 				EE2783B515F62561007A6975 /* CommandLineParser.m */,
 				5F82E6054B0B7727411C1892 /* JetMemoryStream.m */,
-				5F82E918E8B9C0D5DAADC056 /* JetMemoryStream.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -188,7 +188,7 @@
 				EE2783B415F62556007A6975 /* CommandLineParser.h in Headers */,
 				5F82E5D179FA2C27E3F8027F /* GetProcessIdentifierList.h in Headers */,
 				5F82E006B19D524E5914955D /* JetStream.h in Headers */,
-				5F82E4A797F00F2CE935E13E /* JetMemoryStream.h in Headers */,
+				EEBBFCB116C270E600585C8B /* JetMemoryStream.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
